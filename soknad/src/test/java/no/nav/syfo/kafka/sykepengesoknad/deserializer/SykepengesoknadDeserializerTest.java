@@ -35,7 +35,9 @@ public class SykepengesoknadDeserializerTest {
                 "\"max\":\"max\"," +
                 "\"kriterieForVisningAvUndersporsmal\":\"kriterieForVisningAvUndersporsmal\"," +
                 "\"svar\":[{\"verdi\":\"undersporsmal.svarverdi\"}]," +
-                "\"undersporsmal\":[]}]}]}";
+                "\"undersporsmal\":[]}]}]," +
+                "\"korrigerer\":\"korrigerer\"," +
+                "\"korrigertAv\":\"korrigertAv\"}";
 
         SykepengesoknadDeserializer deserializer = new SykepengesoknadDeserializer();
 
@@ -66,7 +68,9 @@ public class SykepengesoknadDeserializerTest {
                 "\"max\":null," +
                 "\"kriterieForVisningAvUndersporsmal\":null," +
                 "\"svar\":null," +
-                "\"undersporsmal\":null}]}";
+                "\"undersporsmal\":null}]," +
+                "\"korrigerer\":\"korrigerer\"," +
+                "\"korrigertAv\":\"korrigertAv\"}";
 
         SykepengesoknadDeserializer deserializer = new SykepengesoknadDeserializer();
 
@@ -96,7 +100,9 @@ public class SykepengesoknadDeserializerTest {
                 "\"max\":null," +
                 "\"kriterieForVisningAvUndersporsmal\":null," +
                 "\"svar\":null," +
-                "\"undersporsmal\":null}]}";
+                "\"undersporsmal\":null}]," +
+                "\"korrigerer\":\"korrigerer\"," +
+                "\"korrigertAv\":\"korrigertAv\"}";
 
         SykepengesoknadDeserializer deserializer = new SykepengesoknadDeserializer();
 

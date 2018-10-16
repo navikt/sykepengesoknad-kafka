@@ -21,4 +21,6 @@ public class SykepengesoknadDTO {
     LocalDate opprettetDato;
     LocalDate innsendtDato;
     List<SporsmalDTO> sporsmal;
+    String korrigerer;
+    String korrigertAv;
 }

@@ -6,7 +6,7 @@
     <groupId>no.nav.syfo.kafka</groupId>
     <artifactId>kafkautils</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.0</version>
+    <version>2-SNAPSHOT</version>
     <name>Kafkautils</name>
 
     <prerequisites>

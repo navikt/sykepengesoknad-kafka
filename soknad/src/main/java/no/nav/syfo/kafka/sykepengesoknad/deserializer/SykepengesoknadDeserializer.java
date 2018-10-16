@@ -9,7 +9,12 @@ import java.io.IOException;
 import java.util.Map;
 
 public class SykepengesoknadDeserializer implements Deserializer<SykepengesoknadDTO> {
-    private final ObjectMapper objectMapper = new ObjectMapper().registerModule(new JavaTimeModule());
+    private final ObjectMapper objectMapper;
+
+    public SykepengesoknadDeserializer() {
+        objectMapper = new ObjectMapper()
+                .registerModule(new JavaTimeModule());
+    }
 
     @Override
     public void configure(Map<String, ?> configs, boolean isKey) {

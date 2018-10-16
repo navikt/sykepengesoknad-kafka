@@ -6,7 +6,7 @@
     <groupId>no.nav.syfo.kafka</groupId>
     <artifactId>soknad</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.0</version>
+    <version>2-SNAPSHOT</version>
     <name>Soknad</name>
 
     <prerequisites>
@@ -38,7 +38,7 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
 
-        <kafkautils.version>1.0.0</kafkautils.version>
+        <kafkautils.version>1</kafkautils.version>
 
         <kafka-clients.version>1.0.0</kafka-clients.version>
         <jackson.version>2.9.6</jackson.version>

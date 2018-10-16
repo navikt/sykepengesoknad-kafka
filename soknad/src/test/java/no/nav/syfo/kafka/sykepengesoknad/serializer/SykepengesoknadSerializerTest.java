@@ -42,7 +42,9 @@ public class SykepengesoknadSerializerTest {
                 "\"max\":\"max\"," +
                 "\"kriterieForVisningAvUndersporsmal\":\"kriterieForVisningAvUndersporsmal\"," +
                 "\"svar\":[{\"verdi\":\"undersporsmal.svarverdi\"}]," +
-                "\"undersporsmal\":[]}]}]}";
+                "\"undersporsmal\":[]}]}]," +
+                "\"korrigerer\":\"korrigerer\"," +
+                "\"korrigertAv\":\"korrigertAv\"}";
 
 
         SykepengesoknadSerializer serializer = new SykepengesoknadSerializer();
@@ -84,6 +86,8 @@ public class SykepengesoknadSerializerTest {
                                 .undersporsmal(emptyList())
                                 .build()))
                         .build()))
+                .korrigerer("korrigerer")
+                .korrigertAv("korrigertAv")
                 .build());
 
         assertThat(bytes).containsExactly(s.getBytes());
