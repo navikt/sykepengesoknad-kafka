@@ -20,7 +20,12 @@ public class SykepengesoknadDTO {
     LocalDate tom;
     LocalDate opprettetDato;
     LocalDate innsendtDato;
-    List<SporsmalDTO> sporsmal;
+    LocalDate startSykeforlop;
+    LocalDate sykmeldingUtskrevet;
+    String arbeidsgiver;
+    String arbeidssituasjon;
     String korrigerer;
     String korrigertAv;
+    List<SoknadPeriodeDTO> soknadPerioder;
+    List<SporsmalDTO> sporsmal;
 }

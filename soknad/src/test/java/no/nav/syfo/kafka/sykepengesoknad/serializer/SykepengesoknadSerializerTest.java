@@ -1,5 +1,6 @@
 package no.nav.syfo.kafka.sykepengesoknad.serializer;
 
+import no.nav.syfo.kafka.sykepengesoknad.dto.SoknadPeriodeDTO;
 import no.nav.syfo.kafka.sykepengesoknad.dto.SporsmalDTO;
 import no.nav.syfo.kafka.sykepengesoknad.dto.SvarDTO;
 import no.nav.syfo.kafka.sykepengesoknad.dto.SykepengesoknadDTO;
@@ -11,10 +12,10 @@ import static java.util.Collections.emptyList;
 import static java.util.Collections.singletonList;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class SykepengesoknadSerializerTest {
+class SykepengesoknadSerializerTest {
 
     @Test
-    public void test() {
+    void test() {
         String s = "{\"id\":\"id\"," +
                 "\"aktorId\":\"aktorId\"," +
                 "\"sykmeldingId\":\"sykmeldingId\"," +
@@ -24,6 +25,15 @@ public class SykepengesoknadSerializerTest {
                 "\"tom\":\"2018-10-15\"," +
                 "\"opprettetDato\":\"2018-10-15\"," +
                 "\"innsendtDato\":\"2018-10-15\"," +
+                "\"startSykeforlop\":\"2018-10-15\"," +
+                "\"sykmeldingUtskrevet\":\"2018-10-15\"," +
+                "\"arbeidsgiver\":\"ARBEIDSGIVER A/S\"," +
+                "\"arbeidssituasjon\":\"ARBEIDSTAKER\"," +
+                "\"korrigerer\":\"korrigerer\"," +
+                "\"korrigertAv\":\"korrigertAv\"," +
+                "\"soknadPerioder\":[{\"fom\":\"2018-10-15\"," +
+                "\"tom\":\"2018-10-15\"," +
+                "\"grad\":100}]," +
                 "\"sporsmal\":[{\"id\":\"id\"," +
                 "\"tag\":\"tag\"," +
                 "\"sporsmalstekst\":\"sporsmalstekst\"," +
@@ -42,9 +52,7 @@ public class SykepengesoknadSerializerTest {
                 "\"max\":\"max\"," +
                 "\"kriterieForVisningAvUndersporsmal\":\"kriterieForVisningAvUndersporsmal\"," +
                 "\"svar\":[{\"verdi\":\"undersporsmal.svarverdi\"}]," +
-                "\"undersporsmal\":[]}]}]," +
-                "\"korrigerer\":\"korrigerer\"," +
-                "\"korrigertAv\":\"korrigertAv\"}";
+                "\"undersporsmal\":[]}]}]}";
 
 
         SykepengesoknadSerializer serializer = new SykepengesoknadSerializer();
@@ -59,6 +67,17 @@ public class SykepengesoknadSerializerTest {
                 .tom(LocalDate.of(2018, 10, 15))
                 .opprettetDato(LocalDate.of(2018, 10, 15))
                 .innsendtDato(LocalDate.of(2018, 10, 15))
+                .startSykeforlop(LocalDate.of(2018, 10, 15))
+                .sykmeldingUtskrevet(LocalDate.of(2018, 10, 15))
+                .arbeidsgiver("ARBEIDSGIVER A/S")
+                .arbeidssituasjon("ARBEIDSTAKER")
+                .korrigerer("korrigerer")
+                .korrigertAv("korrigertAv")
+                .soknadPerioder(singletonList(SoknadPeriodeDTO.builder()
+                        .fom(LocalDate.of(2018, 10, 15))
+                        .tom(LocalDate.of(2018, 10, 15))
+                        .grad(100)
+                        .build()))
                 .sporsmal(singletonList(SporsmalDTO.builder()
                         .id("id")
                         .tag("tag")
@@ -86,8 +105,6 @@ public class SykepengesoknadSerializerTest {
                                 .undersporsmal(emptyList())
                                 .build()))
                         .build()))
-                .korrigerer("korrigerer")
-                .korrigertAv("korrigertAv")
                 .build());
 
         assertThat(bytes).containsExactly(s.getBytes());

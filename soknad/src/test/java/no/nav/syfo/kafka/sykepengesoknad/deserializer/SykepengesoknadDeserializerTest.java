@@ -5,9 +5,9 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class SykepengesoknadDeserializerTest {
+class SykepengesoknadDeserializerTest {
     @Test
-    public void full() {
+    void full() {
         String s = "{\"id\":\"id\"," +
                 "\"aktorId\":\"aktorId\"," +
                 "\"sykmeldingId\":\"sykmeldingId\"," +
@@ -17,6 +17,15 @@ public class SykepengesoknadDeserializerTest {
                 "\"tom\":\"2018-10-15\"," +
                 "\"opprettetDato\":\"2018-10-15\"," +
                 "\"innsendtDato\":\"2018-10-15\"," +
+                "\"startSykeforlop\":\"2018-10-15\"," +
+                "\"sykmeldingUtskrevet\":\"2018-10-15\"," +
+                "\"arbeidsgiver\":\"ARBEIDSGIVER A/S\"," +
+                "\"arbeidssituasjon\":\"ARBEIDSTAKER\"," +
+                "\"korrigerer\":\"korrigerer\"," +
+                "\"korrigertAv\":\"korrigertAv\"," +
+                "\"soknadPerioder\":[{\"fom\":\"2018-10-15\"," +
+                "\"tom\":\"2018-10-15\"," +
+                "\"grad\":100}]," +
                 "\"sporsmal\":[{\"id\":\"id\"," +
                 "\"tag\":\"tag\"," +
                 "\"sporsmalstekst\":\"sporsmalstekst\"," +
@@ -35,23 +44,23 @@ public class SykepengesoknadDeserializerTest {
                 "\"max\":\"max\"," +
                 "\"kriterieForVisningAvUndersporsmal\":\"kriterieForVisningAvUndersporsmal\"," +
                 "\"svar\":[{\"verdi\":\"undersporsmal.svarverdi\"}]," +
-                "\"undersporsmal\":[]}]}]," +
-                "\"korrigerer\":\"korrigerer\"," +
-                "\"korrigertAv\":\"korrigertAv\"}";
+                "\"undersporsmal\":[]}]}]}";
 
         SykepengesoknadDeserializer deserializer = new SykepengesoknadDeserializer();
 
         SykepengesoknadDTO sykepengesoknadDTO = deserializer.deserialize("topic", s.getBytes());
 
         assertThat(sykepengesoknadDTO).hasNoNullFieldsOrProperties();
+        assertThat(sykepengesoknadDTO.getSoknadPerioder().get(0)).hasNoNullFieldsOrProperties();
         assertThat(sykepengesoknadDTO.getSporsmal().get(0)).hasNoNullFieldsOrProperties();
         assertThat(sykepengesoknadDTO.getSporsmal().get(0).getUndersporsmal().get(0)).hasNoNullFieldsOrProperties();
         assertThat(sykepengesoknadDTO.getSporsmal().get(0).getSvar().get(0)).hasNoNullFieldsOrProperties();
     }
 
     @Test
-    public void oneMissing() {
+    void taklerAtNyeFelterMangler() {
         String s = "{\"id\":\"id\"," +
+                "\"aktorId\":\"aktorId\"," +
                 "\"sykmeldingId\":\"sykmeldingId\"," +
                 "\"soknadstype\":\"soknadstype\"," +
                 "\"status\":\"status\"," +
@@ -59,28 +68,37 @@ public class SykepengesoknadDeserializerTest {
                 "\"tom\":\"2018-10-15\"," +
                 "\"opprettetDato\":\"2018-10-15\"," +
                 "\"innsendtDato\":\"2018-10-15\"," +
-                "\"sporsmal\":[{\"id\":null," +
-                "\"tag\":null," +
-                "\"sporsmalstekst\":null," +
-                "\"undertekst\":null," +
-                "\"svartype\":null," +
-                "\"min\":null," +
-                "\"max\":null," +
-                "\"kriterieForVisningAvUndersporsmal\":null," +
-                "\"svar\":null," +
-                "\"undersporsmal\":null}]," +
                 "\"korrigerer\":\"korrigerer\"," +
-                "\"korrigertAv\":\"korrigertAv\"}";
+                "\"korrigertAv\":\"korrigertAv\"," +
+                "\"sporsmal\":[{\"id\":\"id\"," +
+                "\"tag\":\"tag\"," +
+                "\"sporsmalstekst\":\"sporsmalstekst\"," +
+                "\"undertekst\":\"undertekst\"," +
+                "\"svartype\":\"svartype\"," +
+                "\"min\":\"min\"," +
+                "\"max\":\"max\"," +
+                "\"kriterieForVisningAvUndersporsmal\":\"kriterieForVisningAvUndersporsmal\"," +
+                "\"svar\":[{\"verdi\":\"svarverdi\"}]," +
+                "\"undersporsmal\":[{\"id\":\"id\"," +
+                "\"tag\":\"tag\"," +
+                "\"sporsmalstekst\":\"sporsmalstekst\"," +
+                "\"undertekst\":\"undertekst\"," +
+                "\"svartype\":\"svartype\"," +
+                "\"min\":\"min\"," +
+                "\"max\":\"max\"," +
+                "\"kriterieForVisningAvUndersporsmal\":\"kriterieForVisningAvUndersporsmal\"," +
+                "\"svar\":[{\"verdi\":\"undersporsmal.svarverdi\"}]," +
+                "\"undersporsmal\":[]}]}]}";
 
         SykepengesoknadDeserializer deserializer = new SykepengesoknadDeserializer();
 
         SykepengesoknadDTO sykepengesoknadDTO = deserializer.deserialize("topic", s.getBytes());
 
-        assertThat(sykepengesoknadDTO).hasNoNullFieldsOrPropertiesExcept("aktorId");
+        assertThat(sykepengesoknadDTO).hasNoNullFieldsOrPropertiesExcept("startSykeforlop", "sykmeldingUtskrevet", "arbeidsgiver", "arbeidssituasjon", "soknadPerioder");
     }
 
     @Test
-    public void ignoreUnknown() {
+    void ignoreUnknown() {
         String s = "{\"id\":\"id\"," +
                 "\"aktorId\":\"aktorId\"," +
                 "\"fnr\":\"fnr\"," +
@@ -91,6 +109,15 @@ public class SykepengesoknadDeserializerTest {
                 "\"tom\":\"2018-10-15\"," +
                 "\"opprettetDato\":\"2018-10-15\"," +
                 "\"innsendtDato\":\"2018-10-15\"," +
+                "\"startSykeforlop\":\"2018-10-15\"," +
+                "\"sykmeldingUtskrevet\":\"2018-10-15\"," +
+                "\"arbeidsgiver\":\"ARBEIDSGIVER A/S\"," +
+                "\"arbeidssituasjon\":\"ARBEIDSTAKER\"," +
+                "\"korrigerer\":\"korrigerer\"," +
+                "\"korrigertAv\":\"korrigertAv\"," +
+                "\"soknadPerioder\":[{\"fom\":\"2018-10-15\"," +
+                "\"tom\":\"2018-10-15\"," +
+                "\"grad\":100}]," +
                 "\"sporsmal\":[{\"id\":null," +
                 "\"tag\":null," +
                 "\"sporsmalstekst\":null," +
@@ -100,9 +127,7 @@ public class SykepengesoknadDeserializerTest {
                 "\"max\":null," +
                 "\"kriterieForVisningAvUndersporsmal\":null," +
                 "\"svar\":null," +
-                "\"undersporsmal\":null}]," +
-                "\"korrigerer\":\"korrigerer\"," +
-                "\"korrigertAv\":\"korrigertAv\"}";
+                "\"undersporsmal\":null}]}";
 
         SykepengesoknadDeserializer deserializer = new SykepengesoknadDeserializer();
 
