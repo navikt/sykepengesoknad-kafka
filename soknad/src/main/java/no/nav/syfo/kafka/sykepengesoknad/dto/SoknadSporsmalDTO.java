@@ -10,7 +10,7 @@ import java.util.List;
 @Value
 @Builder(toBuilder = true)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class SykepengesoknadDTO {
+public class SoknadSporsmalDTO {
     String id;
     String aktorId;
     String sykmeldingId;

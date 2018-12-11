@@ -3,7 +3,7 @@ package no.nav.syfo.kafka.sykepengesoknad.serializer;
 import no.nav.syfo.kafka.sykepengesoknad.dto.SoknadPeriodeDTO;
 import no.nav.syfo.kafka.sykepengesoknad.dto.SporsmalDTO;
 import no.nav.syfo.kafka.sykepengesoknad.dto.SvarDTO;
-import no.nav.syfo.kafka.sykepengesoknad.dto.SykepengesoknadDTO;
+import no.nav.syfo.kafka.sykepengesoknad.dto.SoknadSporsmalDTO;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
@@ -12,7 +12,7 @@ import static java.util.Collections.emptyList;
 import static java.util.Collections.singletonList;
 import static org.assertj.core.api.Assertions.assertThat;
 
-class SykepengesoknadSerializerTest {
+class SykepengeSoknadDTOSerializerTest {
 
     @Test
     void test() {
@@ -57,7 +57,7 @@ class SykepengesoknadSerializerTest {
 
         SykepengesoknadSerializer serializer = new SykepengesoknadSerializer();
 
-        byte[] bytes = serializer.serialize("topic", SykepengesoknadDTO.builder()
+        byte[] bytes = serializer.serialize("topic", SoknadSporsmalDTO.builder()
                 .id("id")
                 .aktorId("aktorId")
                 .sykmeldingId("sykmeldingId")
