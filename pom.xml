@@ -41,6 +41,7 @@
 
     <modules>
         <module>kafkautils</module>
+        <module>sykepengesoknad</module>
         <module>soknad</module>
     </modules>
 </project>
