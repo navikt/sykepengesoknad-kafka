@@ -6,7 +6,7 @@
     <groupId>no.nav.syfo.kafka</groupId>
     <artifactId>soknad</artifactId>
     <packaging>jar</packaging>
-    <version>3-SNAPSHOT</version>
+    <version>4-SNAPSHOT</version>
     <name>Soknad</name>
 
     <prerequisites>
