@@ -1,12 +1,10 @@
 package no.nav.syfo.kafka.sykepengesoknad.dto.marius;
 
-import no.nav.syfo.kafka.sykepengesoknad.dto.SoknadSporsmalDTO;
-
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Value;
+import no.nav.syfo.kafka.sykepengesoknad.dto.SoknadSporsmalDTO;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Value
@@ -20,16 +18,18 @@ public class SykepengeSoknadDTO {
     private List<KorrigertArbeidstid> korrigertArbeidstidListe;
     private List<Fravaer> fravaerListe;
     private boolean utenlands;
-    private String utdanningsgrad;
     private List<Periode> egenmeldingListe;
-    private List<Periode> papirsykmeldingListe;
-    private List<Periode> annensykmeldingListe;
-    private List<Inntektskilde> andreinntektListe;
+    private List<Periode> papirSykmeldingListe;
+    private List<Periode> annenSykmeldingListe;
+    private List<Inntektskilde> andreInntektListe;
     private SoknadSporsmalDTO soknadsdto;
 
-public List<KorrigertArbeidstid> getKorrigertArbeidstid(){
-    return korrigertArbeidstidListe==null ?
-            new ArrayList<>() : korrigertArbeidstidListe;
-}
+    public String getUtdanning(){
+        for(Fravaer fravaer:fravaerListe) {
+            if (fravaer.getType().contains("UTDANNING"))
+                return fravaer.getType();
+        }
+        return null;
+    }
 
 }
