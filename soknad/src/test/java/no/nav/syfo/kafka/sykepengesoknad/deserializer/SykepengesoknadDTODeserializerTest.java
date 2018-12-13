@@ -49,5 +49,12 @@ class SykepengesoknadDTODeserializerTest {
         assertThat(sykepengesoknadDTO.getType()).isEqualTo(UNKNOWN);
     }
 
-}
+    @Test
+    void nullEnumDeserialiseresSomNull() {
+        String serialisertSykepengesoknadMedNySoknadType = serialisertSykepengesoknad.replace("\"type\":\"ARBEIDSTAKERE\",", "");
 
+        SykepengesoknadDTO sykepengesoknadDTO = sykepengesoknadDeserializer.deserialize("topic", serialisertSykepengesoknadMedNySoknadType.getBytes());
+
+        assertThat(sykepengesoknadDTO.getType()).isNull();
+    }
+}
