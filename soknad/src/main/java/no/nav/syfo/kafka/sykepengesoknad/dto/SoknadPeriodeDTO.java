@@ -12,5 +12,8 @@ import java.time.LocalDate;
 public class SoknadPeriodeDTO {
     LocalDate fom;
     LocalDate tom;
-    Integer grad;
+    Integer sykmeldingGrad;
+    Integer faktiskGrad;
+    Double avtaltTimer;
+    Double faktiskTimer;
 }

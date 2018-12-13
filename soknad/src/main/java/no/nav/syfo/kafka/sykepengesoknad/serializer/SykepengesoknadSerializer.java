@@ -3,14 +3,14 @@ package no.nav.syfo.kafka.sykepengesoknad.serializer;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import no.nav.syfo.kafka.sykepengesoknad.dto.SoknadSporsmalDTO;
+import no.nav.syfo.kafka.sykepengesoknad.dto.marius.SykepengesoknadDTO;
 import org.apache.kafka.common.serialization.Serializer;
 
 import java.util.Map;
 
 import static com.fasterxml.jackson.databind.SerializationFeature.WRITE_DATES_AS_TIMESTAMPS;
 
-public class SykepengesoknadSerializer implements Serializer<SoknadSporsmalDTO> {
+public class SykepengesoknadSerializer implements Serializer<SykepengesoknadDTO> {
     private final ObjectMapper objectMapper;
 
     public SykepengesoknadSerializer() {
@@ -24,7 +24,7 @@ public class SykepengesoknadSerializer implements Serializer<SoknadSporsmalDTO> 
     }
 
     @Override
-    public byte[] serialize(String topic, SoknadSporsmalDTO sykepengesoknad) {
+    public byte[] serialize(String topic, SykepengesoknadDTO sykepengesoknad) {
         if (sykepengesoknad == null) {
             return null;
         }

@@ -10,5 +10,4 @@ import lombok.Value;
 public class Periode {
     public LocalDate fom;
     public LocalDate tom;
-
 }
