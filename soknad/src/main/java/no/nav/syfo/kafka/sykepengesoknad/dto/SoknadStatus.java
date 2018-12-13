@@ -10,5 +10,5 @@ public enum SoknadStatus {
     KORRIGERT,
     AVBRUTT,
     SLETTET,
-    @JsonEnumDefaultValue UNKNOWN
+    @JsonEnumDefaultValue UKJENT
 }

@@ -13,7 +13,7 @@ import static com.fasterxml.jackson.databind.DeserializationFeature.READ_UNKNOWN
 public class SykepengesoknadDeserializer implements Deserializer<SykepengesoknadDTO> {
     private final ObjectMapper objectMapper;
 
-    SykepengesoknadDeserializer() {
+    public SykepengesoknadDeserializer() {
         objectMapper = new ObjectMapper()
                 .registerModule(new JavaTimeModule())
                 .configure(READ_UNKNOWN_ENUM_VALUES_USING_DEFAULT_VALUE, true);

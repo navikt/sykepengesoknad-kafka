@@ -7,5 +7,5 @@ public enum FravarType {
     PERMISJON,
     UTLANDSOPPHOLD,
     UTDANNING,
-    @JsonEnumDefaultValue UNKNOWN
+    @JsonEnumDefaultValue UKJENT
 }

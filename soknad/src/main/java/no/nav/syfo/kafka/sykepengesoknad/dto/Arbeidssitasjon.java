@@ -6,5 +6,5 @@ public enum Arbeidssitasjon {
     SELVSTENDIG_NARINGSDRIVENDE,
     FRILANSER,
     ARBEIDSTAKER,
-    @JsonEnumDefaultValue UNKNOWN
+    @JsonEnumDefaultValue UKJENT
 }

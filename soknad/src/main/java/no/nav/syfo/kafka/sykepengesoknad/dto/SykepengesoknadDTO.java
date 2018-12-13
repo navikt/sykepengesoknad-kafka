@@ -17,8 +17,7 @@ public class SykepengesoknadDTO {
     SoknadStatus status;
     String aktorId;
     String sykmeldingId;
-    String orgnummer;
-    String arbeidsgiver;
+    ArbeidsgiverDTO arbeidsgiver;
     Arbeidssitasjon arbeidssituasjon;
     String korrigerer;
     String korrigertAv;

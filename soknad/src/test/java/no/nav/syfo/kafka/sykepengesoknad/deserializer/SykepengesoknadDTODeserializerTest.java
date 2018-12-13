@@ -4,7 +4,7 @@ import no.nav.syfo.kafka.sykepengesoknad.dto.SykepengesoknadDTO;
 import org.junit.jupiter.api.Test;
 
 import static no.nav.syfo.kafka.sykepengesoknad.TestUtil.serialisertSykepengesoknad;
-import static no.nav.syfo.kafka.sykepengesoknad.dto.SoknadType.UNKNOWN;
+import static no.nav.syfo.kafka.sykepengesoknad.dto.SoknadType.UKJENT;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class SykepengesoknadDTODeserializerTest {
@@ -15,7 +15,7 @@ class SykepengesoknadDTODeserializerTest {
     void deserialisererFullSykepengesoknad() {
         SykepengesoknadDTO sykepengesoknadDTO = sykepengesoknadDeserializer.deserialize("topic", serialisertSykepengesoknad.getBytes());
 
-        assertThat(sykepengesoknadDTO.getOrgnummer()).isEqualTo("999999999");
+        assertThat(sykepengesoknadDTO.getArbeidsgiver().getOrgnummer()).isEqualTo("999999999");
         assertThat(sykepengesoknadDTO.getSoknadPerioder().get(0)).hasNoNullFieldsOrProperties();
         assertThat(sykepengesoknadDTO.getSporsmal().get(0)).hasNoNullFieldsOrProperties();
         assertThat(sykepengesoknadDTO.getSporsmal().get(0).getUndersporsmal().get(0)).hasNoNullFieldsOrProperties();
@@ -46,7 +46,7 @@ class SykepengesoknadDTODeserializerTest {
 
         SykepengesoknadDTO sykepengesoknadDTO = sykepengesoknadDeserializer.deserialize("topic", serialisertSykepengesoknadMedNySoknadType.getBytes());
 
-        assertThat(sykepengesoknadDTO.getType()).isEqualTo(UNKNOWN);
+        assertThat(sykepengesoknadDTO.getType()).isEqualTo(UKJENT);
     }
 
     @Test

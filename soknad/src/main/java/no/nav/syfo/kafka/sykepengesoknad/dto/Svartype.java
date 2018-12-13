@@ -18,5 +18,5 @@ public enum Svartype {
     RADIO_GRUPPE_TIMER_PROSENT,
     RADIO,
     TALL,
-    @JsonEnumDefaultValue UNKNOWN
+    @JsonEnumDefaultValue UKJENT
 }

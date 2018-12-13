@@ -9,5 +9,5 @@ public enum InntektskildeType {
     SELVSTENDIG_NARINGSDRIVENDE_DAGMAMMA,
     JORDBRUKER_FISKER_REINDRIFTSUTOVER,
     ANNET,
-    @JsonEnumDefaultValue UNKNOWN
+    @JsonEnumDefaultValue UKJENT
 }

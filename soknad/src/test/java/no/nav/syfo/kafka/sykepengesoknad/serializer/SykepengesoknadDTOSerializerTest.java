@@ -16,8 +16,8 @@ import static no.nav.syfo.kafka.sykepengesoknad.dto.SoknadStatus.NY;
 import static no.nav.syfo.kafka.sykepengesoknad.dto.SoknadType.ARBEIDSTAKERE;
 import static no.nav.syfo.kafka.sykepengesoknad.dto.Svartype.CHECKBOX;
 import static no.nav.syfo.kafka.sykepengesoknad.dto.Svartype.JA_NEI;
-import static no.nav.syfo.kafka.sykepengesoknad.dto.Visningskritere.CHECKED;
-import static no.nav.syfo.kafka.sykepengesoknad.dto.Visningskritere.JA;
+import static no.nav.syfo.kafka.sykepengesoknad.dto.Visningskriterium.CHECKED;
+import static no.nav.syfo.kafka.sykepengesoknad.dto.Visningskriterium.JA;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class SykepengesoknadDTOSerializerTest {
@@ -32,8 +32,10 @@ class SykepengesoknadDTOSerializerTest {
                 .status(NY)
                 .aktorId("111111111")
                 .sykmeldingId("14e78e84-50a5-45bb-9919-191c54f99691")
-                .orgnummer("999999999")
-                .arbeidsgiver("ARBEIDSGIVER A/S")
+                .arbeidsgiver(ArbeidsgiverDTO.builder()
+                        .navn("ARBEIDSGIVER A/S")
+                        .orgnummer("999999999")
+                        .build())
                 .arbeidssituasjon(ARBEIDSTAKER)
                 .korrigerer("d79c7d92-30a0-497e-b72e-0476b46afa24")
                 .korrigertAv("9090009c-d7fb-4d02-a97d-459a383fc5ed")
@@ -101,6 +103,7 @@ class SykepengesoknadDTOSerializerTest {
                 .build();
 
         byte[] bytes = serializer.serialize("topic", sykepengesoknadDTO);
+        assertThat(serialisertSykepengesoknad).isEqualTo(new String(bytes));
 
         assertThat(bytes).containsExactly(serialisertSykepengesoknad.getBytes());
     }

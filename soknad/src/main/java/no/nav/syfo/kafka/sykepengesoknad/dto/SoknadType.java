@@ -6,5 +6,5 @@ public enum SoknadType {
     SELVSTENDIGE_OG_FRILANSERE,
     OPPHOLD_UTLAND,
     ARBEIDSTAKERE,
-    @JsonEnumDefaultValue UNKNOWN
+    @JsonEnumDefaultValue UKJENT
 }
