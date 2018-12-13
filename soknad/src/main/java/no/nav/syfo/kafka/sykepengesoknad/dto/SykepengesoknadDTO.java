@@ -1,11 +1,8 @@
-package no.nav.syfo.kafka.sykepengesoknad.dto.marius;
+package no.nav.syfo.kafka.sykepengesoknad.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Builder;
-import lombok.Getter;
 import lombok.Value;
-import no.nav.syfo.kafka.sykepengesoknad.dto.SoknadPeriodeDTO;
-import no.nav.syfo.kafka.sykepengesoknad.dto.SporsmalDTO;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -13,20 +10,19 @@ import java.util.List;
 
 @Value
 @Builder(toBuilder = true)
-@Getter
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SykepengesoknadDTO {
     String id;
-    String status;
-    String soknadstype;
+    SoknadType type;
+    SoknadStatus status;
     String aktorId;
-    String orgnummer;
     String sykmeldingId;
+    String orgnummer;
     String arbeidsgiver;
-    String arbeidssituasjon;
+    Arbeidssitasjon arbeidssituasjon;
     String korrigerer;
     String korrigertAv;
-    boolean soktUtenlandsopphold;
+    Boolean soktUtenlandsopphold;
     LocalDate fom;
     LocalDate tom;
     LocalDate startSykeforlop;
@@ -35,10 +31,10 @@ public class SykepengesoknadDTO {
     LocalDateTime opprettet;
     LocalDateTime sendtNav;
     LocalDateTime sendtArbeidsgiver;
-    List<Periode> egenmeldinger;
-    List<Periode> papirsykmeldinger;
-    List<Fravar> fravaer;
-    List<Inntektskilde> andreInntektskilder;
+    List<PeriodeDTO> egenmeldinger;
+    List<PeriodeDTO> papirsykmeldinger;
+    List<FravarDTO> fravar;
+    List<InntektskildeDTO> andreInntektskilder;
     List<SoknadPeriodeDTO> soknadPerioder;
     List<SporsmalDTO> sporsmal;
 }
