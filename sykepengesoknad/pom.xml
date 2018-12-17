@@ -4,10 +4,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>no.nav.syfo.kafka</groupId>
-    <artifactId>soknad</artifactId>
+    <artifactId>sykepengesoknad</artifactId>
     <packaging>jar</packaging>
-    <version>3-SNAPSHOT</version>
-    <name>Soknad</name>
+    <version>2-SNAPSHOT</version>
+    <name>Sykepengesoknad</name>
 
     <prerequisites>
         <maven>3.3.9</maven>

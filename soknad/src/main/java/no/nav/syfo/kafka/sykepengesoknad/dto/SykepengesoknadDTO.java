@@ -5,7 +5,6 @@ import lombok.Builder;
 import lombok.Value;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Value
@@ -13,28 +12,20 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SykepengesoknadDTO {
     String id;
-    SoknadstypeDTO type;
-    SoknadsstatusDTO status;
     String aktorId;
     String sykmeldingId;
-    ArbeidsgiverDTO arbeidsgiver;
-    ArbeidssituasjonDTO arbeidssituasjon;
-    String korrigerer;
-    String korrigertAv;
-    Boolean soktUtenlandsopphold;
-    Boolean arbeidsgiverForskutterer;
+    String soknadstype;
+    String status;
     LocalDate fom;
     LocalDate tom;
+    LocalDate opprettetDato;
+    LocalDate innsendtDato;
     LocalDate startSykeforlop;
-    LocalDate arbeidGjenopptatt;
-    LocalDateTime sykmeldingSkrevet;
-    LocalDateTime opprettet;
-    LocalDateTime sendtNav;
-    LocalDateTime sendtArbeidsgiver;
-    List<PeriodeDTO> egenmeldinger;
-    List<PeriodeDTO> papirsykmeldinger;
-    List<FravarDTO> fravar;
-    List<InntektskildeDTO> andreInntektskilder;
-    List<SoknadsperiodeDTO> soknadPerioder;
+    LocalDate sykmeldingUtskrevet;
+    String arbeidsgiver;
+    String arbeidssituasjon;
+    String korrigerer;
+    String korrigertAv;
+    List<SoknadPeriodeDTO> soknadPerioder;
     List<SporsmalDTO> sporsmal;
 }

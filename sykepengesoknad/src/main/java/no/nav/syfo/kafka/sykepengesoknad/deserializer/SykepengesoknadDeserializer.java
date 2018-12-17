@@ -8,12 +8,15 @@ import org.apache.kafka.common.serialization.Deserializer;
 import java.io.IOException;
 import java.util.Map;
 
+import static com.fasterxml.jackson.databind.DeserializationFeature.READ_UNKNOWN_ENUM_VALUES_USING_DEFAULT_VALUE;
+
 public class SykepengesoknadDeserializer implements Deserializer<SykepengesoknadDTO> {
     private final ObjectMapper objectMapper;
 
     public SykepengesoknadDeserializer() {
         objectMapper = new ObjectMapper()
-                .registerModule(new JavaTimeModule());
+                .registerModule(new JavaTimeModule())
+                .configure(READ_UNKNOWN_ENUM_VALUES_USING_DEFAULT_VALUE, true);
     }
 
     @Override

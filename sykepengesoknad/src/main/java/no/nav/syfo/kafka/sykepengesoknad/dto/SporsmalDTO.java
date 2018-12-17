@@ -14,10 +14,10 @@ public class SporsmalDTO {
     String tag;
     String sporsmalstekst;
     String undertekst;
-    String svartype;
     String min;
     String max;
-    String kriterieForVisningAvUndersporsmal;
+    SvartypeDTO svartype;
+    VisningskriteriumDTO kriterieForVisningAvUndersporsmal;
     List<SvarDTO> svar;
     List<SporsmalDTO> undersporsmal;
 }
