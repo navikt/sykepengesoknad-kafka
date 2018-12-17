@@ -1,19 +1,19 @@
-package no.nav.syfo.kafka.sykepengesoknad.serializer;
+package no.nav.syfo.kafka.soknad.serializer;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import no.nav.syfo.kafka.sykepengesoknad.dto.SykepengesoknadDTO;
+import no.nav.syfo.kafka.soknad.dto.SoknadDTO;
 import org.apache.kafka.common.serialization.Serializer;
 
 import java.util.Map;
 
 import static com.fasterxml.jackson.databind.SerializationFeature.WRITE_DATES_AS_TIMESTAMPS;
 
-public class SykepengesoknadSerializer implements Serializer<SykepengesoknadDTO> {
+public class SoknadSerializer implements Serializer<SoknadDTO> {
     private final ObjectMapper objectMapper;
 
-    public SykepengesoknadSerializer() {
+    public SoknadSerializer() {
         objectMapper = new ObjectMapper()
                 .registerModule(new JavaTimeModule())
                 .configure(WRITE_DATES_AS_TIMESTAMPS, false);
@@ -24,14 +24,14 @@ public class SykepengesoknadSerializer implements Serializer<SykepengesoknadDTO>
     }
 
     @Override
-    public byte[] serialize(String topic, SykepengesoknadDTO sykepengesoknad) {
-        if (sykepengesoknad == null) {
+    public byte[] serialize(String topic, SoknadDTO soknad) {
+        if (soknad == null) {
             return null;
         }
         try {
-            return objectMapper.writeValueAsBytes(sykepengesoknad);
+            return objectMapper.writeValueAsBytes(soknad);
         } catch (JsonProcessingException e) {
-            throw new RuntimeException("Feil ved konvertering av Sykepengesøknad til bytes", e);
+            throw new RuntimeException("Feil ved konvertering av søknad til bytes", e);
         }
     }
 

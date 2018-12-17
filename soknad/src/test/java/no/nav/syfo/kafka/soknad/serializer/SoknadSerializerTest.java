@@ -1,9 +1,9 @@
-package no.nav.syfo.kafka.sykepengesoknad.serializer;
+package no.nav.syfo.kafka.soknad.serializer;
 
-import no.nav.syfo.kafka.sykepengesoknad.dto.SoknadPeriodeDTO;
-import no.nav.syfo.kafka.sykepengesoknad.dto.SporsmalDTO;
-import no.nav.syfo.kafka.sykepengesoknad.dto.SvarDTO;
-import no.nav.syfo.kafka.sykepengesoknad.dto.SykepengesoknadDTO;
+import no.nav.syfo.kafka.soknad.dto.SoknadPeriodeDTO;
+import no.nav.syfo.kafka.soknad.dto.SporsmalDTO;
+import no.nav.syfo.kafka.soknad.dto.SvarDTO;
+import no.nav.syfo.kafka.soknad.dto.SoknadDTO;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
@@ -12,7 +12,7 @@ import static java.util.Collections.emptyList;
 import static java.util.Collections.singletonList;
 import static org.assertj.core.api.Assertions.assertThat;
 
-class SykepengesoknadSerializerTest {
+class SoknadSerializerTest {
 
     @Test
     void test() {
@@ -55,9 +55,9 @@ class SykepengesoknadSerializerTest {
                 "\"undersporsmal\":[]}]}]}";
 
 
-        SykepengesoknadSerializer serializer = new SykepengesoknadSerializer();
+        SoknadSerializer serializer = new SoknadSerializer();
 
-        byte[] bytes = serializer.serialize("topic", SykepengesoknadDTO.builder()
+        byte[] bytes = serializer.serialize("topic", SoknadDTO.builder()
                 .id("id")
                 .aktorId("aktorId")
                 .sykmeldingId("sykmeldingId")
