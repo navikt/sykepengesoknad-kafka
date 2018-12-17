@@ -12,11 +12,12 @@ public class TestUtil {
             "\"korrigerer\":\"d79c7d92-30a0-497e-b72e-0476b46afa24\"," +
             "\"korrigertAv\":\"9090009c-d7fb-4d02-a97d-459a383fc5ed\"," +
             "\"soktUtenlandsopphold\":false," +
+            "\"arbeidsgiverForskutterer\":false," +
             "\"fom\":\"2018-10-15\"," +
             "\"tom\":\"2018-10-15\"," +
             "\"startSykeforlop\":\"2018-10-15\"," +
-            "\"sykmeldingUtskrevet\":\"2018-10-15\"," +
             "\"arbeidGjenopptatt\":\"2018-10-16\"," +
+            "\"sykmeldingSkrevet\":\"2018-10-15T08:00:00\"," +
             "\"opprettet\":\"2018-10-15T09:00:00\"," +
             "\"sendtNav\":\"2018-10-15T10:02:00\"," +
             "\"sendtArbeidsgiver\":\"2018-10-15T10:00:00\"," +
@@ -34,7 +35,8 @@ public class TestUtil {
             "\"sykmeldingGrad\":100," +
             "\"faktiskGrad\":90," +
             "\"avtaltTimer\":37.5," +
-            "\"faktiskTimer\":33.75}]," +
+            "\"faktiskTimer\":33.75," +
+            "\"sykmeldingtype\":\"GRADERT\"}]," +
             "\"sporsmal\":[{\"id\":\"id\"," +
             "\"tag\":\"tag\"," +
             "\"sporsmalstekst\":\"sporsmalstekst\"," +

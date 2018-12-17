@@ -12,5 +12,5 @@ import java.time.LocalDate;
 public class FravarDTO {
     LocalDate fom;
     LocalDate tom;
-    FravarType type;
+    FravarstypeDTO type;
 }

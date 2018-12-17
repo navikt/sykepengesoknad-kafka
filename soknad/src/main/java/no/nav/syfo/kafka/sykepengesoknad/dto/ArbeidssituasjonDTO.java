@@ -2,9 +2,9 @@ package no.nav.syfo.kafka.sykepengesoknad.dto;
 
 import com.fasterxml.jackson.annotation.JsonEnumDefaultValue;
 
-public enum SoknadType {
-    SELVSTENDIGE_OG_FRILANSERE,
-    OPPHOLD_UTLAND,
-    ARBEIDSTAKERE,
+public enum ArbeidssituasjonDTO {
+    SELVSTENDIG_NARINGSDRIVENDE,
+    FRILANSER,
+    ARBEIDSTAKER,
     @JsonEnumDefaultValue UKJENT
 }

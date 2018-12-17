@@ -16,8 +16,8 @@ public class SporsmalDTO {
     String undertekst;
     String min;
     String max;
-    Svartype svartype;
-    Visningskriterium kriterieForVisningAvUndersporsmal;
+    SvartypeDTO svartype;
+    VisningskriteriumDTO kriterieForVisningAvUndersporsmal;
     List<SvarDTO> svar;
     List<SporsmalDTO> undersporsmal;
 }

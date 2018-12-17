@@ -13,20 +13,21 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SykepengesoknadDTO {
     String id;
-    SoknadType type;
-    SoknadStatus status;
+    SoknadstypeDTO type;
+    SoknadsstatusDTO status;
     String aktorId;
     String sykmeldingId;
     ArbeidsgiverDTO arbeidsgiver;
-    Arbeidssitasjon arbeidssituasjon;
+    ArbeidssituasjonDTO arbeidssituasjon;
     String korrigerer;
     String korrigertAv;
     Boolean soktUtenlandsopphold;
+    Boolean arbeidsgiverForskutterer;
     LocalDate fom;
     LocalDate tom;
     LocalDate startSykeforlop;
-    LocalDate sykmeldingUtskrevet;
     LocalDate arbeidGjenopptatt;
+    LocalDateTime sykmeldingSkrevet;
     LocalDateTime opprettet;
     LocalDateTime sendtNav;
     LocalDateTime sendtArbeidsgiver;
@@ -34,6 +35,6 @@ public class SykepengesoknadDTO {
     List<PeriodeDTO> papirsykmeldinger;
     List<FravarDTO> fravar;
     List<InntektskildeDTO> andreInntektskilder;
-    List<SoknadPeriodeDTO> soknadPerioder;
+    List<SoknadsperiodeDTO> soknadPerioder;
     List<SporsmalDTO> sporsmal;
 }

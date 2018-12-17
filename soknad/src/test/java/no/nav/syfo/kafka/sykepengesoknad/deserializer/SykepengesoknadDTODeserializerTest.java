@@ -4,7 +4,7 @@ import no.nav.syfo.kafka.sykepengesoknad.dto.SykepengesoknadDTO;
 import org.junit.jupiter.api.Test;
 
 import static no.nav.syfo.kafka.sykepengesoknad.TestUtil.serialisertSykepengesoknad;
-import static no.nav.syfo.kafka.sykepengesoknad.dto.SoknadType.UKJENT;
+import static no.nav.syfo.kafka.sykepengesoknad.dto.SoknadstypeDTO.UKJENT;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class SykepengesoknadDTODeserializerTest {

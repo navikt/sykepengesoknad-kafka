@@ -9,15 +9,15 @@ import java.time.LocalDateTime;
 import static java.util.Collections.emptyList;
 import static java.util.Collections.singletonList;
 import static no.nav.syfo.kafka.sykepengesoknad.TestUtil.serialisertSykepengesoknad;
-import static no.nav.syfo.kafka.sykepengesoknad.dto.Arbeidssitasjon.ARBEIDSTAKER;
-import static no.nav.syfo.kafka.sykepengesoknad.dto.FravarType.FERIE;
-import static no.nav.syfo.kafka.sykepengesoknad.dto.InntektskildeType.FRILANSER;
-import static no.nav.syfo.kafka.sykepengesoknad.dto.SoknadStatus.NY;
-import static no.nav.syfo.kafka.sykepengesoknad.dto.SoknadType.ARBEIDSTAKERE;
-import static no.nav.syfo.kafka.sykepengesoknad.dto.Svartype.CHECKBOX;
-import static no.nav.syfo.kafka.sykepengesoknad.dto.Svartype.JA_NEI;
-import static no.nav.syfo.kafka.sykepengesoknad.dto.Visningskriterium.CHECKED;
-import static no.nav.syfo.kafka.sykepengesoknad.dto.Visningskriterium.JA;
+import static no.nav.syfo.kafka.sykepengesoknad.dto.ArbeidssituasjonDTO.ARBEIDSTAKER;
+import static no.nav.syfo.kafka.sykepengesoknad.dto.FravarstypeDTO.FERIE;
+import static no.nav.syfo.kafka.sykepengesoknad.dto.InntektskildetypeDTO.FRILANSER;
+import static no.nav.syfo.kafka.sykepengesoknad.dto.SoknadsstatusDTO.NY;
+import static no.nav.syfo.kafka.sykepengesoknad.dto.SoknadstypeDTO.ARBEIDSTAKERE;
+import static no.nav.syfo.kafka.sykepengesoknad.dto.SvartypeDTO.CHECKBOX;
+import static no.nav.syfo.kafka.sykepengesoknad.dto.SvartypeDTO.JA_NEI;
+import static no.nav.syfo.kafka.sykepengesoknad.dto.VisningskriteriumDTO.CHECKED;
+import static no.nav.syfo.kafka.sykepengesoknad.dto.VisningskriteriumDTO.JA;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class SykepengesoknadDTOSerializerTest {
@@ -40,11 +40,12 @@ class SykepengesoknadDTOSerializerTest {
                 .korrigerer("d79c7d92-30a0-497e-b72e-0476b46afa24")
                 .korrigertAv("9090009c-d7fb-4d02-a97d-459a383fc5ed")
                 .soktUtenlandsopphold(false)
+                .arbeidsgiverForskutterer(false)
                 .fom(LocalDate.of(2018, 10, 15))
                 .tom(LocalDate.of(2018, 10, 15))
                 .startSykeforlop(LocalDate.of(2018, 10, 15))
-                .sykmeldingUtskrevet(LocalDate.of(2018, 10, 15))
                 .arbeidGjenopptatt(LocalDate.of(2018, 10, 16))
+                .sykmeldingSkrevet(LocalDateTime.of(2018, 10, 15,8,0))
                 .opprettet(LocalDateTime.of(2018, 10, 15, 9, 0))
                 .sendtNav(LocalDateTime.of(2018, 10, 15, 10, 2))
                 .sendtArbeidsgiver(LocalDateTime.of(2018, 10, 15, 10, 0))
@@ -65,13 +66,14 @@ class SykepengesoknadDTOSerializerTest {
                         .type(FRILANSER)
                         .sykmeldt(true)
                         .build()))
-                .soknadPerioder(singletonList(SoknadPeriodeDTO.builder()
+                .soknadPerioder(singletonList(SoknadsperiodeDTO.builder()
                         .fom(LocalDate.of(2018, 10, 15))
                         .tom(LocalDate.of(2018, 10, 15))
                         .sykmeldingGrad(100)
                         .faktiskGrad(90)
                         .avtaltTimer(37.5)
                         .faktiskTimer(33.75)
+                        .sykmeldingtype(SykmeldingstypeDTO.GRADERT)
                         .build()))
                 .sporsmal(singletonList(SporsmalDTO.builder()
                         .id("id")

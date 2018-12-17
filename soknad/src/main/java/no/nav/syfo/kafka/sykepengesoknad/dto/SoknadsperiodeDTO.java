@@ -9,11 +9,12 @@ import java.time.LocalDate;
 @Value
 @Builder(toBuilder = true)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class SoknadPeriodeDTO {
+public class SoknadsperiodeDTO {
     LocalDate fom;
     LocalDate tom;
     Integer sykmeldingGrad;
     Integer faktiskGrad;
     Double avtaltTimer;
     Double faktiskTimer;
+    SykmeldingstypeDTO sykmeldingtype;
 }

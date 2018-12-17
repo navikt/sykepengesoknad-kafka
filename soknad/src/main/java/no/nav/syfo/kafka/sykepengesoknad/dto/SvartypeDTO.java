@@ -2,7 +2,7 @@ package no.nav.syfo.kafka.sykepengesoknad.dto;
 
 import com.fasterxml.jackson.annotation.JsonEnumDefaultValue;
 
-public enum Svartype {
+public enum SvartypeDTO {
     JA_NEI,
     CHECKBOX,
     CHECKBOX_GRUPPE,

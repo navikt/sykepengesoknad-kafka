@@ -8,6 +8,6 @@ import lombok.Value;
 @Builder(toBuilder = true)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class InntektskildeDTO {
-    InntektskildeType type;
+    InntektskildetypeDTO type;
     Boolean sykmeldt;
 }
