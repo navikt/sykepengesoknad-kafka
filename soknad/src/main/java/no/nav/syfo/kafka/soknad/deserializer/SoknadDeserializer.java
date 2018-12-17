@@ -1,17 +1,17 @@
-package no.nav.syfo.kafka.sykepengesoknad.deserializer;
+package no.nav.syfo.kafka.soknad.deserializer;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import no.nav.syfo.kafka.sykepengesoknad.dto.SykepengesoknadDTO;
+import no.nav.syfo.kafka.soknad.dto.SoknadDTO;
 import org.apache.kafka.common.serialization.Deserializer;
 
 import java.io.IOException;
 import java.util.Map;
 
-public class SykepengesoknadDeserializer implements Deserializer<SykepengesoknadDTO> {
+public class SoknadDeserializer implements Deserializer<SoknadDTO> {
     private final ObjectMapper objectMapper;
 
-    public SykepengesoknadDeserializer() {
+    public SoknadDeserializer() {
         objectMapper = new ObjectMapper()
                 .registerModule(new JavaTimeModule());
     }
@@ -21,11 +21,11 @@ public class SykepengesoknadDeserializer implements Deserializer<Sykepengesoknad
     }
 
     @Override
-    public SykepengesoknadDTO deserialize(String topic, byte[] data) {
+    public SoknadDTO deserialize(String topic, byte[] data) {
         try {
-            return objectMapper.readValue(data, SykepengesoknadDTO.class);
+            return objectMapper.readValue(data, SoknadDTO.class);
         } catch (IOException e) {
-            throw new RuntimeException("Feil ved konvertering av bytes til Sykepengesøknad", e);
+            throw new RuntimeException("Feil ved konvertering av bytes til søknad", e);
         }
     }
 

@@ -1,11 +1,11 @@
-package no.nav.syfo.kafka.sykepengesoknad.deserializer;
+package no.nav.syfo.kafka.soknad.deserializer;
 
-import no.nav.syfo.kafka.sykepengesoknad.dto.SykepengesoknadDTO;
+import no.nav.syfo.kafka.soknad.dto.SoknadDTO;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class SykepengesoknadDeserializerTest {
+class SoknadDeserializerTest {
     @Test
     void full() {
         String s = "{\"id\":\"id\"," +
@@ -46,15 +46,15 @@ class SykepengesoknadDeserializerTest {
                 "\"svar\":[{\"verdi\":\"undersporsmal.svarverdi\"}]," +
                 "\"undersporsmal\":[]}]}]}";
 
-        SykepengesoknadDeserializer deserializer = new SykepengesoknadDeserializer();
+        SoknadDeserializer deserializer = new SoknadDeserializer();
 
-        SykepengesoknadDTO sykepengesoknadDTO = deserializer.deserialize("topic", s.getBytes());
+        SoknadDTO soknadDTO = deserializer.deserialize("topic", s.getBytes());
 
-        assertThat(sykepengesoknadDTO).hasNoNullFieldsOrProperties();
-        assertThat(sykepengesoknadDTO.getSoknadPerioder().get(0)).hasNoNullFieldsOrProperties();
-        assertThat(sykepengesoknadDTO.getSporsmal().get(0)).hasNoNullFieldsOrProperties();
-        assertThat(sykepengesoknadDTO.getSporsmal().get(0).getUndersporsmal().get(0)).hasNoNullFieldsOrProperties();
-        assertThat(sykepengesoknadDTO.getSporsmal().get(0).getSvar().get(0)).hasNoNullFieldsOrProperties();
+        assertThat(soknadDTO).hasNoNullFieldsOrProperties();
+        assertThat(soknadDTO.getSoknadPerioder().get(0)).hasNoNullFieldsOrProperties();
+        assertThat(soknadDTO.getSporsmal().get(0)).hasNoNullFieldsOrProperties();
+        assertThat(soknadDTO.getSporsmal().get(0).getUndersporsmal().get(0)).hasNoNullFieldsOrProperties();
+        assertThat(soknadDTO.getSporsmal().get(0).getSvar().get(0)).hasNoNullFieldsOrProperties();
     }
 
     @Test
@@ -90,11 +90,11 @@ class SykepengesoknadDeserializerTest {
                 "\"svar\":[{\"verdi\":\"undersporsmal.svarverdi\"}]," +
                 "\"undersporsmal\":[]}]}]}";
 
-        SykepengesoknadDeserializer deserializer = new SykepengesoknadDeserializer();
+        SoknadDeserializer deserializer = new SoknadDeserializer();
 
-        SykepengesoknadDTO sykepengesoknadDTO = deserializer.deserialize("topic", s.getBytes());
+        SoknadDTO soknadDTO = deserializer.deserialize("topic", s.getBytes());
 
-        assertThat(sykepengesoknadDTO).hasNoNullFieldsOrPropertiesExcept("startSykeforlop", "sykmeldingUtskrevet", "arbeidsgiver", "arbeidssituasjon", "soknadPerioder");
+        assertThat(soknadDTO).hasNoNullFieldsOrPropertiesExcept("startSykeforlop", "sykmeldingUtskrevet", "arbeidsgiver", "arbeidssituasjon", "soknadPerioder");
     }
 
     @Test
@@ -129,11 +129,11 @@ class SykepengesoknadDeserializerTest {
                 "\"svar\":null," +
                 "\"undersporsmal\":null}]}";
 
-        SykepengesoknadDeserializer deserializer = new SykepengesoknadDeserializer();
+        SoknadDeserializer deserializer = new SoknadDeserializer();
 
-        SykepengesoknadDTO sykepengesoknadDTO = deserializer.deserialize("topic", s.getBytes());
+        SoknadDTO soknadDTO = deserializer.deserialize("topic", s.getBytes());
 
-        assertThat(sykepengesoknadDTO).hasNoNullFieldsOrProperties();
+        assertThat(soknadDTO).hasNoNullFieldsOrProperties();
     }
 }
 
