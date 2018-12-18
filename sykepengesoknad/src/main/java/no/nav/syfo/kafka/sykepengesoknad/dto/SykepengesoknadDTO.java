@@ -22,7 +22,7 @@ public class SykepengesoknadDTO {
     String korrigerer;
     String korrigertAv;
     Boolean soktUtenlandsopphold;
-    Boolean arbeidsgiverForskutterer;
+    ArbeidsgiverForskuttererDTO arbeidsgiverForskutterer;
     LocalDate fom;
     LocalDate tom;
     LocalDate startSykeforlop;

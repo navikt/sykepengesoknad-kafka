@@ -12,7 +12,7 @@ public class TestUtil {
             "\"korrigerer\":\"d79c7d92-30a0-497e-b72e-0476b46afa24\"," +
             "\"korrigertAv\":\"9090009c-d7fb-4d02-a97d-459a383fc5ed\"," +
             "\"soktUtenlandsopphold\":false," +
-            "\"arbeidsgiverForskutterer\":false," +
+            "\"arbeidsgiverForskutterer\":\"VET_IKKE\"," +
             "\"fom\":\"2018-10-15\"," +
             "\"tom\":\"2018-10-15\"," +
             "\"startSykeforlop\":\"2018-10-15\"," +
