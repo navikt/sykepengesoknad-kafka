@@ -4,14 +4,14 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>no.nav.syfo.kafka</groupId>
-    <artifactId>kafkautils</artifactId>
+    <artifactId>serialisering</artifactId>
     <packaging>jar</packaging>
-    <version>3-SNAPSHOT</version>
-    <name>Kafkautils</name>
+    <version>2-SNAPSHOT</version>
+    <name>Serialisering</name>
 
     <scm>
-        <developerConnection>scm:git:https://github.com/navikt/syfogsak.git</developerConnection>
-        <url>https://github.com/navikt/syfogsak</url>
+        <developerConnection>scm:git:https://github.com/navikt/syfokafka.git</developerConnection>
+        <url>https://github.com/navikt/syfokafka</url>
         <tag>HEAD</tag>
     </scm>
 
@@ -33,8 +33,10 @@
         <java.version>1.8</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
+
+        <kafkautils.version>2</kafkautils.version>
+
         <kafka-clients.version>1.0.0</kafka-clients.version>
-        <slf4j.version>1.7.25</slf4j.version>
         <junit-jupiter.version>5.3.1</junit-jupiter.version>
         <assertj-core.version>3.11.1</assertj-core.version>
 
@@ -43,14 +45,15 @@
 
     <dependencies>
         <dependency>
+            <groupId>no.nav.syfo.kafka</groupId>
+            <artifactId>kafkautils</artifactId>
+            <version>${kafkautils.version}</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.apache.kafka</groupId>
             <artifactId>kafka-clients</artifactId>
             <version>${kafka-clients.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>${slf4j.version}</version>
         </dependency>
 
         <dependency>

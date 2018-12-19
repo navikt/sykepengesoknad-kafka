@@ -9,10 +9,6 @@
     <version>2-SNAPSHOT</version>
     <name>Syfokafka</name>
 
-    <prerequisites>
-        <maven>3.3.9</maven>
-    </prerequisites>
-
     <scm>
         <developerConnection>scm:git:https://github.com/navikt/syfogsak.git</developerConnection>
         <url>https://github.com/navikt/syfogsak</url>
@@ -41,7 +37,8 @@
 
     <modules>
         <module>kafkautils</module>
-        <module>sykepengesoknad</module>
+        <module>serialisering</module>
         <module>soknad</module>
+        <module>sykepengesoknad</module>
     </modules>
 </project>
