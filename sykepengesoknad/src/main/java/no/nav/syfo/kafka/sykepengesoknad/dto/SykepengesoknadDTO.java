@@ -25,7 +25,7 @@ public class SykepengesoknadDTO {
     ArbeidsgiverForskuttererDTO arbeidsgiverForskutterer;
     LocalDate fom;
     LocalDate tom;
-    LocalDate startSykeforlop;
+    LocalDate startSyketilfelle;
     LocalDate arbeidGjenopptatt;
     LocalDateTime sykmeldingSkrevet;
     LocalDateTime opprettet;
@@ -35,6 +35,6 @@ public class SykepengesoknadDTO {
     List<PeriodeDTO> papirsykmeldinger;
     List<FravarDTO> fravar;
     List<InntektskildeDTO> andreInntektskilder;
-    List<SoknadsperiodeDTO> soknadPerioder;
+    List<SoknadsperiodeDTO> soknadsperioder;
     List<SporsmalDTO> sporsmal;
 }

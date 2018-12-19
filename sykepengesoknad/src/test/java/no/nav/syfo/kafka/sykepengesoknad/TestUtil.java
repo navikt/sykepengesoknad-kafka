@@ -15,7 +15,7 @@ public class TestUtil {
             "\"arbeidsgiverForskutterer\":\"VET_IKKE\"," +
             "\"fom\":\"2018-10-15\"," +
             "\"tom\":\"2018-10-15\"," +
-            "\"startSykeforlop\":\"2018-10-15\"," +
+            "\"startSyketilfelle\":\"2018-10-15\"," +
             "\"arbeidGjenopptatt\":\"2018-10-16\"," +
             "\"sykmeldingSkrevet\":\"2018-10-15T08:00:00\"," +
             "\"opprettet\":\"2018-10-15T09:00:00\"," +
@@ -30,13 +30,13 @@ public class TestUtil {
             "\"type\":\"FERIE\"}]," +
             "\"andreInntektskilder\":[{\"type\":\"FRILANSER\"," +
             "\"sykmeldt\":true}]," +
-            "\"soknadPerioder\":[{\"fom\":\"2018-10-15\"," +
+            "\"soknadsperioder\":[{\"fom\":\"2018-10-15\"," +
             "\"tom\":\"2018-10-15\"," +
-            "\"sykmeldingGrad\":100," +
+            "\"sykmeldingsgrad\":100," +
             "\"faktiskGrad\":90," +
             "\"avtaltTimer\":37.5," +
             "\"faktiskTimer\":33.75," +
-            "\"sykmeldingtype\":\"GRADERT\"}]," +
+            "\"sykmeldingstype\":\"GRADERT\"}]," +
             "\"sporsmal\":[{\"id\":\"id\"," +
             "\"tag\":\"tag\"," +
             "\"sporsmalstekst\":\"sporsmalstekst\"," +
@@ -44,7 +44,7 @@ public class TestUtil {
             "\"min\":\"min\"," +
             "\"max\":\"max\"," +
             "\"svartype\":\"JA_NEI\"," +
-            "\"kriterieForVisningAvUndersporsmal\":\"JA\"," +
+            "\"kriteriumForVisningAvUndersporsmal\":\"JA\"," +
             "\"svar\":[{\"verdi\":\"svarverdi\"}]," +
             "\"undersporsmal\":[{\"id\":\"id\"," +
             "\"tag\":\"tag\"," +
@@ -53,7 +53,7 @@ public class TestUtil {
             "\"min\":\"min\"," +
             "\"max\":\"max\"," +
             "\"svartype\":\"CHECKBOX\"," +
-            "\"kriterieForVisningAvUndersporsmal\":\"CHECKED\"," +
+            "\"kriteriumForVisningAvUndersporsmal\":\"CHECKED\"," +
             "\"svar\":[{\"verdi\":\"undersporsmal.svarverdi\"}]," +
             "\"undersporsmal\":[]}]}]}";
 }

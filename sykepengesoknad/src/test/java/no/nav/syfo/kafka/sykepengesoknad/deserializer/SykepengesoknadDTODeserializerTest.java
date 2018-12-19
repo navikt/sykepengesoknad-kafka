@@ -16,7 +16,7 @@ class SykepengesoknadDTODeserializerTest {
         SykepengesoknadDTO sykepengesoknadDTO = sykepengesoknadDeserializer.deserialize("topic", serialisertSykepengesoknad.getBytes());
 
         assertThat(sykepengesoknadDTO.getArbeidsgiver().getOrgnummer()).isEqualTo("999999999");
-        assertThat(sykepengesoknadDTO.getSoknadPerioder().get(0)).hasNoNullFieldsOrProperties();
+        assertThat(sykepengesoknadDTO.getSoknadsperioder().get(0)).hasNoNullFieldsOrProperties();
         assertThat(sykepengesoknadDTO.getSporsmal().get(0)).hasNoNullFieldsOrProperties();
         assertThat(sykepengesoknadDTO.getSporsmal().get(0).getUndersporsmal().get(0)).hasNoNullFieldsOrProperties();
         assertThat(sykepengesoknadDTO.getSporsmal().get(0).getSvar().get(0)).hasNoNullFieldsOrProperties();

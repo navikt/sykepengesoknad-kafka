@@ -12,9 +12,9 @@ import java.time.LocalDate;
 public class SoknadsperiodeDTO {
     LocalDate fom;
     LocalDate tom;
-    Integer sykmeldingGrad;
+    Integer sykmeldingsgrad;
     Integer faktiskGrad;
     Double avtaltTimer;
     Double faktiskTimer;
-    SykmeldingstypeDTO sykmeldingtype;
+    SykmeldingstypeDTO sykmeldingstype;
 }
