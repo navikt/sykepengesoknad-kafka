@@ -11,7 +11,7 @@ import static no.nav.syfo.kafka.KafkaHeaderConstants.MELDINGSTYPE;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
-class SoknadDeserializerTest {
+class MultiFunctionDeserializerTest {
 
     private class Testsoknad implements Soknad {
         public String id;
@@ -25,7 +25,7 @@ class SoknadDeserializerTest {
     void testDefault() {
         String s = "id";
 
-        SoknadDeserializer<Testsoknad> deserializer = new SoknadDeserializer<>(emptyMap(),
+        MultiFunctionDeserializer<Testsoknad> deserializer = new MultiFunctionDeserializer<>(emptyMap(),
                 bytes -> new Testsoknad(new String(bytes, UTF_8)));
 
         Testsoknad testsoknad = deserializer.deserialize("topic",
@@ -39,7 +39,7 @@ class SoknadDeserializerTest {
     void testIngenDefault() {
         String s = "id";
 
-        SoknadDeserializer<Testsoknad> deserializer = new SoknadDeserializer<>(emptyMap());
+        MultiFunctionDeserializer<Testsoknad> deserializer = new MultiFunctionDeserializer<>(emptyMap());
 
         assertThatThrownBy(() -> deserializer.deserialize("topic",
                 new RecordHeaders(singletonList(
@@ -53,7 +53,7 @@ class SoknadDeserializerTest {
     void testFeilIDefault() {
         String s = "id";
 
-        SoknadDeserializer<Testsoknad> deserializer = new SoknadDeserializer<>(emptyMap(),
+        MultiFunctionDeserializer<Testsoknad> deserializer = new MultiFunctionDeserializer<>(emptyMap(),
                 bytes -> {
                     throw new IllegalArgumentException();
                 });
@@ -70,7 +70,7 @@ class SoknadDeserializerTest {
     void testSpesifikk() {
         String s = "id";
 
-        SoknadDeserializer<Testsoknad> deserializer = new SoknadDeserializer<>(singletonMap("spesifikk",
+        MultiFunctionDeserializer<Testsoknad> deserializer = new MultiFunctionDeserializer<>(singletonMap("spesifikk",
                 ((headers, bytes) -> new Testsoknad(new String(bytes, UTF_8)))));
 
         Testsoknad testsoknad = deserializer.deserialize("topic",
@@ -84,7 +84,7 @@ class SoknadDeserializerTest {
     void testFeilISpesifikk() {
         String s = "id";
 
-        SoknadDeserializer<Testsoknad> deserializer = new SoknadDeserializer<>(singletonMap("spesifikk",
+        MultiFunctionDeserializer<Testsoknad> deserializer = new MultiFunctionDeserializer<>(singletonMap("spesifikk",
                 ((headers, bytes) -> {
                     throw new IllegalArgumentException();
                 })));
@@ -101,7 +101,7 @@ class SoknadDeserializerTest {
     void testSpesifikkMatcherIkkeBrukerDefault() {
         String s = "id";
 
-        SoknadDeserializer<Testsoknad> deserializer = new SoknadDeserializer<>(singletonMap("ikkeRiktigFunksjon",
+        MultiFunctionDeserializer<Testsoknad> deserializer = new MultiFunctionDeserializer<>(singletonMap("ikkeRiktigFunksjon",
                 ((headers, bytes) -> new Testsoknad("ikkeDenne"))),
                 bytes -> new Testsoknad(new String(bytes, UTF_8)));
 

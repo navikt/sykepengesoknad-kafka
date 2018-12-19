@@ -10,7 +10,7 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
-class SoknadSerializerTest {
+class FunctionSerializerTest {
 
     private class Testsoknad implements Soknad {
         public String id;
@@ -28,7 +28,7 @@ class SoknadSerializerTest {
 
         List<Soknad> passedSoknad = new ArrayList<>();
 
-        SoknadSerializer<Testsoknad> serializer = new SoknadSerializer<>(soknad -> {
+        FunctionSerializer<Testsoknad> serializer = new FunctionSerializer<>(soknad -> {
             passedSoknad.add(soknad);
             return soknad.id.getBytes(UTF_8);
         });
@@ -45,7 +45,7 @@ class SoknadSerializerTest {
 
         List<Soknad> passedSoknad = new ArrayList<>();
 
-        SoknadSerializer<Testsoknad> serializer = new SoknadSerializer<>(soknad -> {
+        FunctionSerializer<Testsoknad> serializer = new FunctionSerializer<>(soknad -> {
             passedSoknad.add(soknad);
             throw new IllegalArgumentException();
         });
