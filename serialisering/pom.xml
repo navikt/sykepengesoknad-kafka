@@ -4,10 +4,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>no.nav.syfo.kafka</groupId>
-    <artifactId>soknadserialize</artifactId>
+    <artifactId>serialisering</artifactId>
     <packaging>jar</packaging>
     <version>2-SNAPSHOT</version>
-    <name>Soknadserialize</name>
+    <name>Serialisering</name>
 
     <scm>
         <developerConnection>scm:git:https://github.com/navikt/syfokafka.git</developerConnection>

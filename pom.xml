@@ -37,7 +37,7 @@
 
     <modules>
         <module>kafkautils</module>
-        <module>soknadserialize</module>
+        <module>serialisering</module>
         <module>soknad</module>
         <module>sykepengesoknad</module>
     </modules>
