@@ -3,6 +3,7 @@ package no.nav.syfo.kafka.sykepengesoknad.dto;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Builder;
 import lombok.Value;
+import no.nav.syfo.kafka.interfaces.Soknad;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -11,7 +12,7 @@ import java.util.List;
 @Value
 @Builder(toBuilder = true)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class SykepengesoknadDTO {
+public class SykepengesoknadDTO implements Soknad {
     String id;
     SoknadstypeDTO type;
     SoknadsstatusDTO status;
