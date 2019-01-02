@@ -3,7 +3,6 @@ package no.nav.syfo.kafka.soknad.deserializer;
 import org.apache.kafka.common.header.Headers;
 import org.apache.kafka.common.serialization.ExtendedDeserializer;
 
-import java.util.Collections;
 import java.util.Map;
 import java.util.function.BiFunction;
 import java.util.function.Function;
@@ -70,8 +69,6 @@ public class MultiFunctionDeserializer<T> implements ExtendedDeserializer<T> {
 
     @Override
     public void configure(Map<String, ?> configs, boolean isKey) {
-        new MultiFunctionDeserializer<String>(Collections.singletonMap("meldingstype",
-                 (headers, melding) -> new String(melding)));
     }
 
     /**
