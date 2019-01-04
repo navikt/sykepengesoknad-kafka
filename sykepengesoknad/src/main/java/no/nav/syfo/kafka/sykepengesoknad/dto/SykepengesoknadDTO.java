@@ -38,4 +38,5 @@ public class SykepengesoknadDTO implements Soknad {
     List<InntektskildeDTO> andreInntektskilder;
     List<SoknadsperiodeDTO> soknadsperioder;
     List<SporsmalDTO> sporsmal;
+    AvsendertypeDTO avsendertype;
 }
