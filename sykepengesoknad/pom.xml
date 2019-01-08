@@ -34,7 +34,7 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
 
-        <kafkautils.version>2</kafkautils.version>
+        <kafkautils.version>3</kafkautils.version>
 
         <jackson.version>2.9.6</jackson.version>
         <lombok.version>1.16.22</lombok.version>

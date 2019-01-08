@@ -34,7 +34,7 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
 
-        <kafkautils.version>2</kafkautils.version>
+        <kafkautils.version>3</kafkautils.version>
 
         <kafka-clients.version>1.0.0</kafka-clients.version>
         <junit-jupiter.version>5.3.1</junit-jupiter.version>

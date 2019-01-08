@@ -12,6 +12,7 @@ public final class KafkaHeaderConstants {
     public static final String TYPE = "type";
     public static final String CREATED_DATE = "createdDate";
     public static final String CALL_ID = "callId";
+    public static final String NAV_CALLID = "Nav-Callid";
     public static final String MELDINGSTYPE = "MELDINGSTYPE";
 
     public static Optional<String> getLastHeaderByKeyAsString(Headers headers, String key) {

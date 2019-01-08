@@ -37,10 +37,11 @@ public class SyfoProducerRecord<K, V> extends ProducerRecord<K, V> {
     private static <V> Iterable<Header> defaultHeaders(V value, Map<String, Object> additionalHeaders) {
         requireNonNull(value);
         Header guid = new RecordHeader(GUID, toUtf8Bytes(UUID.randomUUID()));
-        Header trackingId = new RecordHeader(CALL_ID, toUtf8Bytes(MDC.get(CALL_ID)));
+        Header callId = new RecordHeader(CALL_ID, toUtf8Bytes(MDC.get(NAV_CALLID)));
+        Header navCallid = new RecordHeader(NAV_CALLID, toUtf8Bytes(MDC.get(NAV_CALLID)));
         Header type = new RecordHeader(TYPE, toUtf8Bytes(value.getClass().getSimpleName()));
         Header createdDate = new RecordHeader(CREATED_DATE, toUtf8Bytes(LocalDateTime.now()));
-        List<Header> headers = new ArrayList<>(asList(type, createdDate, guid, trackingId));
+        List<Header> headers = new ArrayList<>(asList(type, createdDate, guid, callId, navCallid));
 
         additionalHeaders.entrySet()
                 .stream()
