@@ -39,4 +39,6 @@ public class SykepengesoknadDTO implements Soknad {
     List<SoknadsperiodeDTO> soknadsperioder;
     List<SporsmalDTO> sporsmal;
     AvsendertypeDTO avsendertype;
+    Boolean ettersending;
+    MottakerDTO mottaker;
 }
