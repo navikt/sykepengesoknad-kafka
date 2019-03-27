@@ -6,7 +6,7 @@
     <groupId>no.nav.syfo.kafka</groupId>
     <artifactId>sykepengesoknad</artifactId>
     <packaging>jar</packaging>
-    <version>2-SNAPSHOT</version>
+    <version>3-SNAPSHOT</version>
     <name>Sykepengesoknad</name>
 
     <scm>
