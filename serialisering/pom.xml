@@ -6,7 +6,7 @@
     <groupId>no.nav.syfo.kafka</groupId>
     <artifactId>serialisering</artifactId>
     <packaging>jar</packaging>
-    <version>2-SNAPSHOT</version>
+    <version>3-SNAPSHOT</version>
     <name>Serialisering</name>
 
     <scm>
@@ -34,9 +34,11 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
 
-        <kafkautils.version>3</kafkautils.version>
+        <kafkautils.version>4</kafkautils.version>
 
         <kafka-clients.version>2.2.0</kafka-clients.version>
+
+        <interface.version>1</interface.version>
         <junit-jupiter.version>5.4.2</junit-jupiter.version>
         <assertj-core.version>3.12.2</assertj-core.version>
 
@@ -56,6 +58,12 @@
             <version>${kafka-clients.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>no.nav.syfo.kafka</groupId>
+            <artifactId>interface</artifactId>
+            <version>${interface.version}</version>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
