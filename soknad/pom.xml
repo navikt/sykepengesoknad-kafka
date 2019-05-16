@@ -36,9 +36,9 @@
 
         <interface.version>1</interface.version>
 
-        <lombok.version>1.16.22</lombok.version>
+        <lombok.version>1.18.8</lombok.version>
 
-        <maven-surefire-plugin.version>2.22.0</maven-surefire-plugin.version>
+        <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
     </properties>
 
     <dependencies>

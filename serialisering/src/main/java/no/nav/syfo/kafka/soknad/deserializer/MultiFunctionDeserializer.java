@@ -1,7 +1,7 @@
 package no.nav.syfo.kafka.soknad.deserializer;
 
 import org.apache.kafka.common.header.Headers;
-import org.apache.kafka.common.serialization.ExtendedDeserializer;
+import org.apache.kafka.common.serialization.Deserializer;
 
 import java.util.Map;
 import java.util.function.BiFunction;
@@ -28,7 +28,7 @@ import static no.nav.syfo.kafka.KafkaHeaderConstants.getLastHeaderByKeyAsString;
  *
  * @param <T> typen det skal deserialiseres til
  */
-public class MultiFunctionDeserializer<T> implements ExtendedDeserializer<T> {
+public class MultiFunctionDeserializer<T> implements Deserializer<T> {
     private final Map<String, BiFunction<Headers, byte[], T>> deserializeMap;
     private final Function<byte[], T> deserializeDefault;
 
