@@ -10,6 +10,7 @@
     <name>Syfokafka</name>
 
     <url>https://github.com/navikt/syfokafka/</url>
+    <description>Common library for syfo projects using Kafka</description>
     <scm>
         <developerConnection>scm:git:https://github.com/navikt/syfokafka.git</developerConnection>
         <url>https://github.com/navikt/syfokafka/</url>
