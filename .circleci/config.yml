@@ -3,6 +3,8 @@ jobs:
   maven-publish:
     docker:
       - image: circleci/openjdk:8-jdk
+    environment:
+      MAVEN_OPTS: -Xmx3G
     steps:
       - checkout
       - restore_cache:
