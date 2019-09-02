@@ -15,19 +15,6 @@
         <tag>HEAD</tag>
     </scm>
 
-    <distributionManagement>
-        <repository>
-            <id>maven-releases</id>
-            <name>NAV Internal Repository</name>
-            <url>https://repo.adeo.no/repository/maven-releases/</url>
-        </repository>
-        <snapshotRepository>
-            <id>maven-snapshots</id>
-            <name>NAV Snapshot Repository</name>
-            <url>https://repo.adeo.no/repository/maven-snapshots/</url>
-        </snapshotRepository>
-    </distributionManagement>
-
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>

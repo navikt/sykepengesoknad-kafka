@@ -17,8 +17,8 @@ jobs:
       - run:
           name: Set version
           command: |
-            mvn versions:set -DnewVersion="$CIRCLE_SHA1"
-            mvn versions:commit
+            mvn versions:set -DnewVersion="$CIRCLE_SHA1" -DprocessAllModules
+            mvn versions:commit -DprocessAllModules
       - run:
           name: Build artifact
           command: mvn package
