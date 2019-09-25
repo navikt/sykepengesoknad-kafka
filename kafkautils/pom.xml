@@ -3,30 +3,15 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>no.nav.syfo.kafka</groupId>
+    <parent>
+        <groupId>no.nav.syfo.kafka</groupId>
+        <artifactId>syfokafka</artifactId>
+        <version>0-SNAPSHOT</version>
+    </parent>
     <artifactId>kafkautils</artifactId>
     <packaging>jar</packaging>
     <version>0-SNAPSHOT</version>
     <name>Kafkautils</name>
-
-    <scm>
-        <developerConnection>scm:git:https://github.com/navikt/syfogsak.git</developerConnection>
-        <url>https://github.com/navikt/syfogsak</url>
-        <tag>HEAD</tag>
-    </scm>
-
-    <distributionManagement>
-        <repository>
-            <id>maven-releases</id>
-            <name>NAV Internal Repository</name>
-            <url>https://repo.adeo.no/repository/maven-releases/</url>
-        </repository>
-        <snapshotRepository>
-            <id>maven-snapshots</id>
-            <name>NAV Snapshot Repository</name>
-            <url>https://repo.adeo.no/repository/maven-snapshots/</url>
-        </snapshotRepository>
-    </distributionManagement>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -40,7 +25,7 @@
         <junit-jupiter.version>5.4.2</junit-jupiter.version>
         <assertj-core.version>3.12.2</assertj-core.version>
 
-        <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
+        <maven-surefire-plugin.version>3.0.0-M3</maven-surefire-plugin.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
     </properties>
 
