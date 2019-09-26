@@ -60,6 +60,7 @@
         <module>serialisering</module>
         <module>soknad</module>
         <module>sykepengesoknad</module>
+        <module>sykepengesoknadarbeidsledig</module>
     </modules>
 
     <build>
