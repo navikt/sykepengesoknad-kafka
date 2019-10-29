@@ -20,5 +20,6 @@ data class SoknadDTO(
         val korrigerer: String? = null,
         val korrigertAv: String? = null,
         val soknadPerioder: List<SoknadPeriodeDTO>? = null,
-        val sporsmal: List<SporsmalDTO>? = null
+        val sporsmal: List<SporsmalDTO>? = null,
+        val avsendertype: AvsendertypeDTO? = null
 ) : Soknad
