@@ -22,5 +22,6 @@ data class SykepengesoknadArbeidsledigDTO(
         val andreInntektskilder: List<InntektskildeDTO>? = null,
         val soknadsperioder: List<SoknadsperiodeDTO>? = null,
         val sporsmal: List<SporsmalDTO>? = null,
-        val avsendertype: AvsendertypeDTO? = null
+        val avsendertype: AvsendertypeDTO? = null,
+        val fnr: String? = null
 ) : Soknad

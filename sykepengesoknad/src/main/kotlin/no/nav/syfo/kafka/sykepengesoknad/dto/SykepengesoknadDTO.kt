@@ -32,5 +32,6 @@ data class SykepengesoknadDTO(
         val sporsmal: List<SporsmalDTO>? = null,
         val avsendertype: AvsendertypeDTO? = null,
         val ettersending: Boolean = false,
-        val mottaker: MottakerDTO? = null
+        val mottaker: MottakerDTO? = null,
+        val fnr: String? = null
 ) : Soknad
