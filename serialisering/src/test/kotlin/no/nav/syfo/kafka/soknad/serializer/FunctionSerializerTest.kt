@@ -46,6 +46,7 @@ internal class FunctionSerializerTest {
         assertThatThrownBy { serializer.serialize("topic", testsoknad) }
                 .isInstanceOf(IllegalArgumentException::class.java)
 
+        
         assertThat(passedSoknad).hasSize(1).containsExactly(testsoknad)
     }
 }
