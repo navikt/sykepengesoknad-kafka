@@ -61,6 +61,7 @@
         <module>soknad</module>
         <module>sykepengesoknad</module>
         <module>sykepengesoknadarbeidsledig</module>
+        <module>sykepengesoknadbehandlingsdager</module>
     </modules>
 
     <build>
