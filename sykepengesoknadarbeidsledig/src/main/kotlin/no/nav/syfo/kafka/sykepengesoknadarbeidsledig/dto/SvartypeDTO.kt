@@ -14,7 +14,6 @@ enum class SvartypeDTO {
     PROSENT,
     RADIO_GRUPPE,
     RADIO_GRUPPE_TIMER_PROSENT,
-    RADIO_GRUPPE_UKEKALENDER,
     RADIO,
     TALL,
     LAND

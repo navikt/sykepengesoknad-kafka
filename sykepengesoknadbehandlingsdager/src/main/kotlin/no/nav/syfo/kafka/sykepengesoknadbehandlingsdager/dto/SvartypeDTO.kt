@@ -1,4 +1,4 @@
-package no.nav.syfo.kafka.sykepengesoknad.dto
+package no.nav.syfo.kafka.sykepengesoknadbehandlingsdager.dto
 
 enum class SvartypeDTO {
     JA_NEI,
@@ -14,6 +14,7 @@ enum class SvartypeDTO {
     PROSENT,
     RADIO_GRUPPE,
     RADIO_GRUPPE_TIMER_PROSENT,
+    RADIO_GRUPPE_UKEKALENDER,
     RADIO,
     TALL
 }
