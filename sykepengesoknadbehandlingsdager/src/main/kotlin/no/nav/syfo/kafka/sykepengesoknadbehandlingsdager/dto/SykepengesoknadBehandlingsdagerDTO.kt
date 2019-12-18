@@ -23,6 +23,7 @@ data class SykepengesoknadBehandlingsdagerDTO(
         val korrigerer: String? = null,
         val korrigertAv: String? = null,
         val egenmeldinger: List<PeriodeDTO>? = null,
+        val behandlingsdager: List<LocalDate>,
         val papirsykmeldinger: List<PeriodeDTO>? = null,
         val andreInntektskilder: List<InntektskildeDTO>? = null,
         val avsendertype: AvsendertypeDTO? = null,
