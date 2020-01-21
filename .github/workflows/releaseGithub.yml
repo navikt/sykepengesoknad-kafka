@@ -5,6 +5,8 @@ on:
     branches:
     - 'master'
 
+env:
+  GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_ACCESS_TOKEN }}
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -14,7 +16,16 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 1.8
-      - name: Run Maven release
-        run: ./releaseGithub.sh
-        env:
-          GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_ACCESS_TOKEN }}
+      - name: Generer versjon
+        run: |
+          TIME=$(TZ="Europe/Oslo" date +%Y.%m.%d-%H.%M)
+          COMMIT=$(git rev-parse --short=8 HEAD)
+          VERSION=$TIME-$COMMIT
+          echo "::set-env name=VERSION::"$VERSION""
+      - run: mvn -B versions:set -DnewVersion="$VERSION"
+      - run: mvn -B versions:commit
+      - run: mvn -B --settings maven-settings.xml deploy -Dmaven.wagon.http.pool=false
+      - uses: actions/create-release@v1
+        with:
+          tag_name: ${{ env.VERSION }}
+          release_name: ${{ env.VERSION }}
