@@ -189,4 +189,11 @@
             </plugin>
         </plugins>
     </build>
+    <scm>
+        <developerConnection>scm:git:git@github.com:navikt/syfokafka.git</developerConnection>
+        <connection>scm:git:git@github.com:navikt/syfokafka.git</connection>
+        <url>https://github.com/navikt/syfokafka</url>
+        <tag>HEAD</tag>
+    </scm>
+
 </project>

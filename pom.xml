@@ -11,9 +11,11 @@
 
     <url>https://github.com/navikt/syfokafka/</url>
     <description>Common library for syfo projects using Kafka</description>
+
     <scm>
-        <developerConnection>scm:git:https://github.com/navikt/syfokafka.git</developerConnection>
-        <url>https://github.com/navikt/syfokafka/</url>
+        <developerConnection>scm:git:git@github.com:navikt/syfokafka.git</developerConnection>
+        <connection>scm:git:git@github.com:navikt/syfokafka.git</connection>
+        <url>https://github.com/navikt/syfokafka</url>
         <tag>HEAD</tag>
     </scm>
 
