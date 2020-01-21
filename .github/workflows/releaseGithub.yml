@@ -22,10 +22,19 @@ jobs:
           COMMIT=$(git rev-parse --short=8 HEAD)
           VERSION=$TIME-$COMMIT
           echo "::set-env name=VERSION::"$VERSION""
+      - name: Restore .m2 cache
+        uses: actions/cache@v1
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
       - run: mvn -B versions:set -DnewVersion="$VERSION"
       - run: mvn -B versions:commit
       - run: mvn -B --settings maven-settings.xml deploy -Dmaven.wagon.http.pool=false
       - uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_ACCESS_TOKEN }}
         with:
           tag_name: ${{ env.VERSION }}
           release_name: ${{ env.VERSION }}
