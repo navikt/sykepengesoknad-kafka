@@ -11,8 +11,8 @@ import java.time.LocalDate
 import java.time.LocalDateTime
 
 data class SykepengesoknadBehandlingsdagerDTO(
-        val soknadFellesDTO: SoknadFellesDTO,
-        val sykepengesoknadFellesDTO: SykepengesoknadFellesDTO,
+        val soknadFelles: SoknadFellesDTO,
+        val sykepengesoknadFelles: SykepengesoknadFellesDTO,
         val arbeidsgiver: ArbeidsgiverDTO? = null,
         val arbeidsgiverForskutterer: ArbeidsgiverForskuttererDTO? = null,
         val egenmeldinger: List<PeriodeDTO>? = null,

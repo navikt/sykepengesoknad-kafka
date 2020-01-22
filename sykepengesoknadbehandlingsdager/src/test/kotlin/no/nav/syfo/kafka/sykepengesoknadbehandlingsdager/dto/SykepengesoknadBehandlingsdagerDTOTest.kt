@@ -16,7 +16,7 @@ class SykepengesoknadBehandlingsdagerDTOTest {
     fun testAtFnrMaskeres() {
 
         val soknad = SykepengesoknadBehandlingsdagerDTO(
-                soknadFellesDTO = SoknadFellesDTO(
+                soknadFelles = SoknadFellesDTO(
                         id = "id",
                         aktorId = "aktørr",
                         fnr = SkjultVerdi("maskeresBort"),
@@ -24,7 +24,7 @@ class SykepengesoknadBehandlingsdagerDTOTest {
                         opprettet = LocalDate.of(2015, 1, 1).atStartOfDay(),
                         sporsmal = emptyList()
                 ),
-                sykepengesoknadFellesDTO = SykepengesoknadFellesDTO(
+                sykepengesoknadFelles = SykepengesoknadFellesDTO(
                         sykmeldingId = "hei",
                         fom = LocalDate.of(2015, 1, 1),
                         tom = LocalDate.of(2015, 1, 1),
@@ -36,7 +36,7 @@ class SykepengesoknadBehandlingsdagerDTOTest {
                 behandlingsdager = emptyList()
         )
 
-        assertThat(soknad.toString()).isEqualTo("SykepengesoknadBehandlingsdagerDTO(soknadFellesDTO=SoknadFellesDTO(id=id, aktorId=aktørr, fnr=███████████, status=KORRIGERT, sendtNav=null, korrigerer=null, korrigertAv=null, opprettet=2015-01-01T00:00, avsendertype=null, sporsmal=[]), sykepengesoknadFellesDTO=SykepengesoknadFellesDTO(sykmeldingId=hei, fom=2015-01-01, tom=2015-01-01, startSyketilfelle=2015-01-01, sykmeldingSkrevet=2015-01-01T00:00, soknadsperioder=[], arbeidssituasjon=ARBEIDSLEDIG), arbeidsgiver=null, arbeidsgiverForskutterer=null, egenmeldinger=null, behandlingsdager=[], papirsykmeldinger=null, andreInntektskilder=null, ettersending=false, mottaker=null, sendtArbeidsgiver=null)")
+        assertThat(soknad.toString()).isEqualTo("SykepengesoknadBehandlingsdagerDTO(soknadFelles=SoknadFellesDTO(id=id, aktorId=aktørr, fnr=███████████, status=KORRIGERT, sendtNav=null, korrigerer=null, korrigertAv=null, opprettet=2015-01-01T00:00, avsendertype=null, sporsmal=[]), sykepengesoknadFelles=SykepengesoknadFellesDTO(sykmeldingId=hei, fom=2015-01-01, tom=2015-01-01, startSyketilfelle=2015-01-01, sykmeldingSkrevet=2015-01-01T00:00, soknadsperioder=[], arbeidssituasjon=ARBEIDSLEDIG), arbeidsgiver=null, arbeidsgiverForskutterer=null, egenmeldinger=null, behandlingsdager=[], papirsykmeldinger=null, andreInntektskilder=null, ettersending=false, mottaker=null, sendtArbeidsgiver=null)")
     }
 }
 
