@@ -1,5 +1,9 @@
 package no.nav.syfo.kafka.soknad.dto
 
+import no.nav.syfo.kafka.felles.AvsendertypeDTO
+import no.nav.syfo.kafka.felles.SkjultVerdi
+import no.nav.syfo.kafka.felles.SoknadsperiodeDTO
+import no.nav.syfo.kafka.felles.SporsmalDTO
 import no.nav.syfo.kafka.interfaces.Soknad
 import java.time.LocalDate
 
@@ -19,8 +23,8 @@ data class SoknadDTO(
         val arbeidssituasjon: String? = null,
         val korrigerer: String? = null,
         val korrigertAv: String? = null,
-        val soknadPerioder: List<SoknadPeriodeDTO>? = null,
+        val soknadPerioder: List<SoknadsperiodeDTO>? = null,
         val sporsmal: List<SporsmalDTO>? = null,
         val avsendertype: AvsendertypeDTO? = null,
-        val fnr: String? = null
+        val fnr: SkjultVerdi<String>? = null
 ) : Soknad

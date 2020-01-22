@@ -54,7 +54,7 @@
 
     <modules>
         <module>kafkautils</module>
-        <module>interface</module>
+        <module>felles</module>
         <module>serialisering</module>
         <module>soknad</module>
         <module>sykepengesoknad</module>

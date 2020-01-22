@@ -45,7 +45,7 @@
 
         <dependency>
             <groupId>no.nav.syfo.kafka</groupId>
-            <artifactId>interface</artifactId>
+            <artifactId>felles</artifactId>
             <version>0-SNAPSHOT</version>
         </dependency>
     </dependencies>

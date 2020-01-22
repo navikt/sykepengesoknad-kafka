@@ -8,22 +8,15 @@
         <artifactId>syfokafka</artifactId>
         <version>0-SNAPSHOT</version>
     </parent>
-    <artifactId>sykepengesoknad</artifactId>
+    <artifactId>felles</artifactId>
     <packaging>jar</packaging>
     <version>0-SNAPSHOT</version>
-    <name>Sykepengesoknad</name>
-
-    <scm>
-        <developerConnection>scm:git:https://github.com/navikt/syfokafka.git</developerConnection>
-        <url>https://github.com/navikt/syfokafka</url>
-        <tag>HEAD</tag>
-    </scm>
+    <name>Felles kode for kafka</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
         <kotlin.version>1.3.31</kotlin.version>
-        <annotations.version>17.0.0</annotations.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
 
@@ -40,49 +33,43 @@
         <dependency>
             <groupId>org.jetbrains</groupId>
             <artifactId>annotations</artifactId>
-            <version>${annotations.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>no.nav.syfo.kafka</groupId>
-            <artifactId>felles</artifactId>
-            <version>${project.version}</version>
+            <version>13.0</version>
         </dependency>
     </dependencies>
 
     <build>
         <plugins>
             <plugin>
-                <artifactId>kotlin-maven-plugin</artifactId>
-                <groupId>org.jetbrains.kotlin</groupId>
-                <version>${kotlin.version}</version>
-                <configuration>
-                    <args>
-                        <arg>-Xjsr305=strict</arg>
-                    </args>
-                    <jvmTarget>${java.version}</jvmTarget>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>compile</id>
-                        <goals>
-                            <goal>compile</goal>
-                        </goals>
-                        <configuration>
-                            <sourceDirs>
-                                <sourceDir>${project.basedir}/src/main/kotlin</sourceDir>
-                            </sourceDirs>
-                        </configuration>
-                    </execution>
-                </executions>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.jetbrains.kotlin</groupId>
-                        <artifactId>kotlin-maven-allopen</artifactId>
-                        <version>${kotlin.version}</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
+            <artifactId>kotlin-maven-plugin</artifactId>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <version>${kotlin.version}</version>
+            <configuration>
+                <args>
+                    <arg>-Xjsr305=strict</arg>
+                </args>
+                <jvmTarget>${java.version}</jvmTarget>
+            </configuration>
+            <executions>
+                <execution>
+                    <id>compile</id>
+                    <goals>
+                        <goal>compile</goal>
+                    </goals>
+                    <configuration>
+                        <sourceDirs>
+                            <sourceDir>${project.basedir}/src/main/kotlin</sourceDir>
+                        </sourceDirs>
+                    </configuration>
+                </execution>
+            </executions>
+            <dependencies>
+                <dependency>
+                    <groupId>org.jetbrains.kotlin</groupId>
+                    <artifactId>kotlin-maven-allopen</artifactId>
+                    <version>${kotlin.version}</version>
+                </dependency>
+            </dependencies>
+        </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>

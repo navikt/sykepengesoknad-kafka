@@ -1,5 +1,12 @@
 package no.nav.syfo.kafka.sykepengesoknadarbeidsledig.dto
 
+import no.nav.syfo.kafka.felles.AvsendertypeDTO
+import no.nav.syfo.kafka.felles.FravarDTO
+import no.nav.syfo.kafka.felles.InntektskildeDTO
+import no.nav.syfo.kafka.felles.SkjultVerdi
+import no.nav.syfo.kafka.felles.SoknadsperiodeDTO
+import no.nav.syfo.kafka.felles.SoknadsstatusDTO
+import no.nav.syfo.kafka.felles.SporsmalDTO
 import no.nav.syfo.kafka.interfaces.Soknad
 import java.time.LocalDate
 import java.time.LocalDateTime
@@ -23,5 +30,5 @@ data class SykepengesoknadArbeidsledigDTO(
         val soknadsperioder: List<SoknadsperiodeDTO>? = null,
         val sporsmal: List<SporsmalDTO>? = null,
         val avsendertype: AvsendertypeDTO? = null,
-        val fnr: String? = null
+        val fnr: SkjultVerdi<String>?
 ) : Soknad
