@@ -30,5 +30,5 @@ data class SykepengesoknadArbeidsledigDTO(
         val soknadsperioder: List<SoknadsperiodeDTO>? = null,
         val sporsmal: List<SporsmalDTO>? = null,
         val avsendertype: AvsendertypeDTO? = null,
-        val fnr: SkjultVerdi<String>?
+        val fodselsnummer: SkjultVerdi<String>?
 ) : Soknad

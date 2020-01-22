@@ -5,7 +5,7 @@ import java.time.LocalDateTime
 data class SoknadFellesDTO(
         val id: String,
         val aktorId: String,
-        val fnr: SkjultVerdi<String>?,
+        val fodselsnummer: SkjultVerdi<String>?,
         val status: SoknadsstatusDTO,
         val sendtNav: LocalDateTime? = null,
         val korrigerer: String? = null,

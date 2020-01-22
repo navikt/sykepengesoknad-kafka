@@ -46,5 +46,5 @@ data class SykepengesoknadDTO(
         val avsendertype: AvsendertypeDTO? = null,
         val ettersending: Boolean = false,
         val mottaker: MottakerDTO? = null,
-        val fnr: SkjultVerdi<String>?
+        val fodselsnummer: SkjultVerdi<String>?
 ) : Soknad
