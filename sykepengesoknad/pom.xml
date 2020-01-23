@@ -29,6 +29,8 @@
 
         <maven-surefire-plugin.version>3.0.0-M3</maven-surefire-plugin.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+
+        <jackson.version>2.9.6</jackson.version>
     </properties>
 
     <dependencies>
@@ -47,6 +49,12 @@
             <groupId>no.nav.syfo.kafka</groupId>
             <artifactId>felles</artifactId>
             <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
         </dependency>
     </dependencies>
 

@@ -1,5 +1,6 @@
 package no.nav.syfo.kafka.sykepengesoknad.dto
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize
 import no.nav.syfo.kafka.felles.ArbeidsgiverDTO
 import no.nav.syfo.kafka.felles.ArbeidsgiverForskuttererDTO
 import no.nav.syfo.kafka.felles.ArbeidssituasjonDTO
@@ -47,4 +48,11 @@ data class SykepengesoknadDTO(
         val ettersending: Boolean = false,
         val mottaker: MottakerDTO? = null,
         val fodselsnummer: SkjultVerdi<String>?
-) : Soknad
+) : Soknad {
+
+    @JsonSerialize
+    @Deprecated("Benytt fodselsnummer.verdi istedenfor", ReplaceWith("this.fodselsnummer?.verdi"))
+    fun fnr(): String? {
+        return this.fodselsnummer?.verdi
+    }
+}
