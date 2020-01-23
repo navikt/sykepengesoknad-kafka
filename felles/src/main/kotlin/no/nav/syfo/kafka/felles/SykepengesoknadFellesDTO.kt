@@ -9,6 +9,5 @@ data class SykepengesoknadFellesDTO(
         val tom: LocalDate,
         val startSyketilfelle: LocalDate,
         val sykmeldingSkrevet: LocalDateTime,
-        val soknadsperioder: List<SoknadsperiodeDTO>,
-        val arbeidssituasjon: ArbeidssituasjonDTO
+        val soknadsperioder: List<SoknadsperiodeDTO>
 )
