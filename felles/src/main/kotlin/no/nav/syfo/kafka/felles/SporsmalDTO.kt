@@ -8,7 +8,7 @@ data class SporsmalDTO(
         val min: String? = null,
         val max: String? = null,
         val svartype: SvartypeDTO? = null,
-        val kriteriumForVisningAvUndersporsmal: VisningskriteriumDTO? = null,
+        val kriterieForVisningAvUndersporsmal: VisningskriteriumDTO? = null,
         val svar: List<SvarDTO>? = null,
         val undersporsmal: List<SporsmalDTO>? = null
 )
