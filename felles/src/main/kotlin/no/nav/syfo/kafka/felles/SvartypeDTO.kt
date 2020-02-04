@@ -17,5 +17,6 @@ enum class SvartypeDTO {
     RADIO,
     TALL,
     RADIO_GRUPPE_UKEKALENDER,
-    LAND
+    LAND,
+    INFO_BEHANDLINGSDAGER
 }
