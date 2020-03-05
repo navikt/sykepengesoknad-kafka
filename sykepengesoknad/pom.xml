@@ -30,7 +30,7 @@
         <maven-surefire-plugin.version>3.0.0-M3</maven-surefire-plugin.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
 
-        <jackson.version>2.9.10.1</jackson.version>
+        <jackson.version>2.9.10.3</jackson.version>
     </properties>
 
     <dependencies>
