@@ -18,5 +18,6 @@ data class SoknadFellesDTO(
         val ettersending: Boolean = false,
         val mottaker: MottakerDTO? = null,
         val sendtArbeidsgiver: LocalDateTime? = null,
-        val arbeidssituasjon: ArbeidssituasjonDTO? = null
+        val arbeidssituasjon: ArbeidssituasjonDTO? = null,
+        val egenmeldtSykmelding: Boolean? = null
 )

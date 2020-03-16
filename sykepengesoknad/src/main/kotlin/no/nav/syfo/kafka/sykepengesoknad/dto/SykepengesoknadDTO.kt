@@ -47,7 +47,8 @@ data class SykepengesoknadDTO(
         val avsendertype: AvsendertypeDTO? = null,
         val ettersending: Boolean = false,
         val mottaker: MottakerDTO? = null,
-        val fodselsnummer: SkjultVerdi<String>?
+        val fodselsnummer: SkjultVerdi<String>?,
+        val egenmeldtSykmelding: Boolean? = null
 ) : Soknad {
 
     @JsonSerialize
