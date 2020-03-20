@@ -4,5 +4,6 @@ enum class ArbeidssituasjonDTO {
     SELVSTENDIG_NARINGSDRIVENDE,
     FRILANSER,
     ARBEIDSTAKER,
-    ARBEIDSLEDIG
+    ARBEIDSLEDIG,
+    ANNET
 }
