@@ -27,5 +27,6 @@ data class SoknadDTO(
         val sporsmal: List<SporsmalDTO>? = null,
         val avsendertype: AvsendertypeDTO? = null,
         val fodselsnummer: SkjultVerdi<String>? = null,
-        val egenmeldtSykmelding: Boolean? = null
+        val egenmeldtSykmelding: Boolean? = null,
+        val harRedusertVenteperiode: Boolean? = null
 ) : Soknad
