@@ -48,8 +48,10 @@ data class SykepengesoknadDTO(
         val ettersending: Boolean = false,
         val mottaker: MottakerDTO? = null,
         val fodselsnummer: SkjultVerdi<String>?,
-        val egenmeldtSykmelding: Boolean? = null
-) : Soknad {
+        val egenmeldtSykmelding: Boolean? = null,
+        val harRedusertVenteperiode: Boolean? = null,
+        val behandlingsdager: List<LocalDate>? = null
+        ) : Soknad {
 
     @JsonSerialize
     @Deprecated("Benytt fodselsnummer.verdi istedenfor", ReplaceWith("this.fodselsnummer?.verdi"))
