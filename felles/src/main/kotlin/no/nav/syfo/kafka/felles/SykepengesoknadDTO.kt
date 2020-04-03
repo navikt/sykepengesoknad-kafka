@@ -1,4 +1,4 @@
-package no.nav.syfo.kafka.sykepengesoknad.dto
+package no.nav.syfo.kafka.felles
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize
 import no.nav.syfo.kafka.felles.ArbeidsgiverDTO
@@ -14,7 +14,6 @@ import no.nav.syfo.kafka.felles.SoknadsperiodeDTO
 import no.nav.syfo.kafka.felles.SoknadsstatusDTO
 import no.nav.syfo.kafka.felles.SoknadstypeDTO
 import no.nav.syfo.kafka.felles.SporsmalDTO
-import no.nav.syfo.kafka.interfaces.Soknad
 import java.time.LocalDate
 import java.time.LocalDateTime
 
@@ -51,7 +50,7 @@ data class SykepengesoknadDTO(
         val egenmeldtSykmelding: Boolean? = null,
         val harRedusertVenteperiode: Boolean? = null,
         val behandlingsdager: List<LocalDate>? = null
-        ) : Soknad {
+        )  {
 
     @JsonSerialize
     @Deprecated("Benytt fodselsnummer.verdi istedenfor", ReplaceWith("this.fodselsnummer?.verdi"))

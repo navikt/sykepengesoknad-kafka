@@ -1,6 +1,5 @@
 package no.nav.syfo.kafka.soknad.serializer
 
-import no.nav.syfo.kafka.interfaces.Soknad
 import org.junit.jupiter.api.Test
 
 import java.util.ArrayList
@@ -11,7 +10,7 @@ import org.assertj.core.api.Assertions.assertThatThrownBy
 
 internal class FunctionSerializerTest {
 
-    private inner class Testsoknad(var id: String) : Soknad
+    private inner class Testsoknad(var id: String)
 
     @Test
     fun test() {
@@ -19,7 +18,7 @@ internal class FunctionSerializerTest {
 
         val testsoknad = Testsoknad("id")
 
-        val passedSoknad = ArrayList<Soknad>()
+        val passedSoknad = ArrayList<Testsoknad>()
 
         val serializer = FunctionSerializer<Testsoknad> { soknad ->
             passedSoknad.add(soknad)
@@ -36,7 +35,7 @@ internal class FunctionSerializerTest {
     fun testFeilISerialisererfunksjon() {
         val testsoknad = Testsoknad("id")
 
-        val passedSoknad = ArrayList<Soknad>()
+        val passedSoknad = ArrayList<Testsoknad>()
 
         val serializer = FunctionSerializer<Testsoknad> { soknad ->
             passedSoknad.add(soknad)
@@ -46,7 +45,7 @@ internal class FunctionSerializerTest {
         assertThatThrownBy { serializer.serialize("topic", testsoknad) }
                 .isInstanceOf(IllegalArgumentException::class.java)
 
-        
+
         assertThat(passedSoknad).hasSize(1).containsExactly(testsoknad)
     }
 }

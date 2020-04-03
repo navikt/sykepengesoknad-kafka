@@ -1,7 +1,6 @@
 package no.nav.syfo.kafka.soknad.deserializer
 
 import no.nav.syfo.kafka.MELDINGSTYPE
-import no.nav.syfo.kafka.interfaces.Soknad
 import org.apache.kafka.common.header.Header
 import org.apache.kafka.common.header.internals.RecordHeader
 import org.apache.kafka.common.header.internals.RecordHeaders
@@ -13,7 +12,7 @@ import java.util.Collections.emptyMap
 
 class MultiFunctionDeserializerTest {
 
-    private inner class Testsoknad(var id: String) : Soknad
+    private inner class Testsoknad(var id: String)
 
     @Test
     fun testDefault() {
