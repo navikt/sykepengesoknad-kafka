@@ -56,6 +56,7 @@
         <module>kafkautils</module>
         <module>felles</module>
         <module>serialisering</module>
+        <module>legacy-serialisering</module>
     </modules>
 
     <build>
