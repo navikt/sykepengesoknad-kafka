@@ -49,7 +49,8 @@ data class SykepengesoknadDTO(
         val fodselsnummer: SkjultVerdi<String>?,
         val egenmeldtSykmelding: Boolean? = null,
         val harRedusertVenteperiode: Boolean? = null,
-        val behandlingsdager: List<LocalDate>? = null
+        val behandlingsdager: List<LocalDate>? = null,
+        val permitteringer: List<PermitteringDTO>? = null
         )  {
 
     @JsonSerialize
