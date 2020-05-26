@@ -9,4 +9,6 @@ enum class InntektskildetypeDTO {
     ANNET,
     FOSTERHJEMGODTGJORELSE,
     OMSORGSLONN,
+    ARBEIDSFORHOLD,
+    FRILANSER_SELVSTENDIG,
 }
