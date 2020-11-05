@@ -31,6 +31,7 @@ data class SykepengesoknadDTO(
         val arbeidsgiverForskutterer: ArbeidsgiverForskuttererDTO? = null,
         val fom: LocalDate? = null,
         val tom: LocalDate? = null,
+        val dodsdato: LocalDate? = null,
         val startSyketilfelle: LocalDate? = null,
         val arbeidGjenopptatt: LocalDate? = null,
         val sykmeldingSkrevet: LocalDateTime? = null,
