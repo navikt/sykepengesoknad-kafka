@@ -17,7 +17,6 @@ import no.nav.syfo.kafka.felles.SporsmalDTO
 import java.time.LocalDate
 import java.time.LocalDateTime
 
-@Deprecated(message = "Bruk SykepengesoknadDTO med fnr uten aktorid")
 data class DeprecatedSykepengesoknadDTO(
         val id: String? = null,
         val type: SoknadstypeDTO? = null,
