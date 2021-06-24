@@ -39,6 +39,7 @@ data class DeprecatedSykepengesoknadDTO(
         val sendtNav: LocalDateTime? = null,
         val sendtArbeidsgiver: LocalDateTime? = null,
         val egenmeldinger: List<PeriodeDTO>? = null,
+        val fravarForSykmeldingen: List<PeriodeDTO>? = null,
         val papirsykmeldinger: List<PeriodeDTO>? = null,
         val fravar: List<FravarDTO>? = null,
         val andreInntektskilder: List<InntektskildeDTO>? = null,
