@@ -1,0 +1,12 @@
+package no.nav.helse.flex.sykepengesoknad.kafka
+
+enum class SoknadstypeDTO {
+    SELVSTENDIGE_OG_FRILANSERE,
+    OPPHOLD_UTLAND,
+    ARBEIDSTAKERE,
+    ANNET_ARBEIDSFORHOLD,
+    ARBEIDSLEDIG,
+    BEHANDLINGSDAGER,
+    REISETILSKUDD,
+    GRADERT_REISETILSKUDD,
+}

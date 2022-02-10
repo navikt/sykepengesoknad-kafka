@@ -1,0 +1,26 @@
+package no.nav.helse.flex.sykepengesoknad.kafka
+
+enum class SvartypeDTO {
+    JA_NEI,
+    CHECKBOX,
+    CHECKBOX_GRUPPE,
+    CHECKBOX_PANEL,
+    DATO,
+    PERIODE,
+    PERIODER,
+    TIMER,
+    FRITEKST,
+    IKKE_RELEVANT,
+    PROSENT,
+    RADIO_GRUPPE,
+    RADIO_GRUPPE_TIMER_PROSENT,
+    RADIO,
+    TALL,
+    RADIO_GRUPPE_UKEKALENDER,
+    LAND,
+    INFO_BEHANDLINGSDAGER,
+    KVITTERING,
+    DATOER,
+    BELOP,
+    KILOMETER
+}

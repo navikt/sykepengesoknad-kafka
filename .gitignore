@@ -1,4 +1,9 @@
 .idea
 *.iml
 transaction-logs
-target
+
+
+# Gradle files
+out/
+build/
+.gradle/

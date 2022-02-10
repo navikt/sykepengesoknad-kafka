@@ -1,4 +1,10 @@
-# Syfokafka
+# sykepengesoknad-kafka
 
-## Om syfokafka
-Syfokafka definerer objektstrukturen til meldingene på Kafkatopicene til Team Sykefravær. Det er også definert serializere og deserializere for meldingene.
+## Om sykepengesoknad-kafka
+Definerer domeneobjektet på flex.sykepengesoknad kafkatopicet
+
+# Henvendelser
+Spørsmål knyttet til koden eller prosjektet kan stilles til flex@nav.no
+
+## For NAV-ansatte
+Interne henvendelser kan sendes via Slack i kanalen #flex.

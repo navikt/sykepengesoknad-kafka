@@ -1,0 +1,40 @@
+name: Publish artifacts
+on:
+  push:
+jobs:
+  build_and_release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup java
+        uses: actions/setup-java@v1
+        with:
+          java-version: '17'
+      - name: Checkout code
+        uses: actions/checkout@master
+      - name: Gradle wrapper validation
+        uses: gradle/wrapper-validation-action@v1
+      - name: Generer versjon
+        run: |
+          TIME=$(TZ="Europe/Oslo" date +%Y.%m.%d-%H.%M)
+          COMMIT=$(git rev-parse --short=8 HEAD)
+          VERSION=$TIME-$COMMIT
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+      - name: Setup gradle dependency cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/.*gradle*') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+      - name: Lint
+        run: ./gradlew ktlintCheck
+      - name: test and build
+        run: ./gradlew -Pversion="$(echo $VERSION)" build
+      - name: upload artifact
+        if: github.ref == 'refs/heads/master'
+        run: ./gradlew -Pversion="$(echo $VERSION)" publish
+        env:
+          GITHUB_USERNAME: x-access-token
+          GITHUB_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
