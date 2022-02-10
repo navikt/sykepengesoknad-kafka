@@ -6,5 +6,6 @@ enum class SoknadsstatusDTO {
     FREMTIDIG,
     KORRIGERT,
     AVBRUTT,
-    SLETTET
+    SLETTET,
+    UTGAATT
 }
