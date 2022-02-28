@@ -7,8 +7,8 @@ data class SporsmalDTO(
     val undertekst: String? = null,
     val min: String? = null,
     val max: String? = null,
-    val svartype: no.nav.helse.flex.sykepengesoknad.kafka.SvartypeDTO? = null,
-    val kriterieForVisningAvUndersporsmal: no.nav.helse.flex.sykepengesoknad.kafka.VisningskriteriumDTO? = null,
-    val svar: List<no.nav.helse.flex.sykepengesoknad.kafka.SvarDTO>? = null,
-    val undersporsmal: List<no.nav.helse.flex.sykepengesoknad.kafka.SporsmalDTO>? = null
+    val svartype: SvartypeDTO? = null,
+    val kriterieForVisningAvUndersporsmal: VisningskriteriumDTO? = null,
+    val svar: List<SvarDTO>? = null,
+    val undersporsmal: List<SporsmalDTO>? = null
 )

@@ -9,6 +9,6 @@ data class SoknadsperiodeDTO(
     val faktiskGrad: Int? = null,
     val avtaltTimer: Double? = null,
     val faktiskTimer: Double? = null,
-    val sykmeldingstype: no.nav.helse.flex.sykepengesoknad.kafka.SykmeldingstypeDTO? = null,
+    val sykmeldingstype: SykmeldingstypeDTO? = null,
     val grad: Int? = null // Fra gammel SoknadDTO. Bør konsolideres med sykmeldingsgrad
 )
