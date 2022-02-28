@@ -38,5 +38,7 @@ data class SykepengesoknadDTO(
     val harRedusertVenteperiode: Boolean? = null,
     val behandlingsdager: List<LocalDate>? = null,
     val permitteringer: List<PeriodeDTO>? = null,
-    val merknaderFraSykmelding: List<MerknadDTO>? = null
+    val merknaderFraSykmelding: List<MerknadDTO>? = null,
+    val merknader: List<String>? = null,
+    val sendTilGosys: Boolean? = null,
 )
