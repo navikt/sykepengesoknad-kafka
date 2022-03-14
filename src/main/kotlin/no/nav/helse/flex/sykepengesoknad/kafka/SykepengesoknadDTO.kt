@@ -35,6 +35,7 @@ data class SykepengesoknadDTO(
     val ettersending: Boolean = false,
     val mottaker: MottakerDTO? = null,
     val egenmeldtSykmelding: Boolean? = null,
+    val arbeidUtenforNorge: Boolean? = null,
     val harRedusertVenteperiode: Boolean? = null,
     val behandlingsdager: List<LocalDate>? = null,
     val permitteringer: List<PeriodeDTO>? = null,
