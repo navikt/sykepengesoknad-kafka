@@ -22,6 +22,7 @@ data class SykepengesoknadDTO(
     val arbeidGjenopptatt: LocalDate? = null,
     val sykmeldingSkrevet: LocalDateTime? = null,
     val opprettet: LocalDateTime? = null,
+    val opprinneligSendt: LocalDateTime? = null,
     val sendtNav: LocalDateTime? = null,
     val sendtArbeidsgiver: LocalDateTime? = null,
     val egenmeldinger: List<PeriodeDTO>? = null,
