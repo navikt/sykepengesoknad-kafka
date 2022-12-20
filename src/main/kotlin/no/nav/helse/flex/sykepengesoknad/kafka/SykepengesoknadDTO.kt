@@ -43,4 +43,5 @@ data class SykepengesoknadDTO(
     val merknaderFraSykmelding: List<MerknadDTO>? = null,
     val merknader: List<String>? = null,
     val sendTilGosys: Boolean? = null,
+    val utenlandskSykmelding: Boolean? = null,
 )
