@@ -42,6 +42,7 @@ data class SykepengesoknadDTO(
     val behandlingsdager: List<LocalDate>? = null,
     val permitteringer: List<PeriodeDTO>? = null,
     val merknaderFraSykmelding: List<MerknadDTO>? = null,
+    val egenmeldingsdagerFraSykmelding: List<LocalDate>? = null,
     val merknader: List<String>? = null,
     val sendTilGosys: Boolean? = null,
     val utenlandskSykmelding: Boolean? = null,
