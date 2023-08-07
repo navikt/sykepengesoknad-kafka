@@ -5,7 +5,7 @@ repositories {
     mavenCentral()
 }
 
-val kotlinVersion = "1.6.10"
+val kotlinVersion = "1.9.0"
 
 plugins {
     kotlin("jvm") version "1.6.10"
