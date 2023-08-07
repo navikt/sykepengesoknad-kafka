@@ -8,7 +8,7 @@ repositories {
 val kotlinVersion = "1.6.10"
 
 plugins {
-    kotlin("jvm") version "1.6.10"
+    kotlin("jvm") version "1.9.0"
     id("java")
     id("maven-publish")
 }
