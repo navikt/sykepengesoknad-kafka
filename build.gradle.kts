@@ -5,7 +5,7 @@ repositories {
     mavenCentral()
 }
 
-val kotlinVersion = "1.6.10"
+val kotlinVersion = "1.9.0"
 
 plugins {
     kotlin("jvm") version "1.9.0"
@@ -23,7 +23,7 @@ buildscript {
         maven("https://plugins.gradle.org/m2/")
     }
     dependencies {
-        classpath("org.jlleitschuh.gradle:ktlint-gradle:10.2.1")
+        classpath("org.jlleitschuh.gradle:ktlint-gradle:11.5.1")
     }
 }
 

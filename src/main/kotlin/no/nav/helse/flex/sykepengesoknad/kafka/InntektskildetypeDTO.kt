@@ -11,5 +11,5 @@ enum class InntektskildetypeDTO {
     OMSORGSLONN,
     ARBEIDSFORHOLD,
     FRILANSER_SELVSTENDIG,
-    STYREVERV,
+    STYREVERV
 }
