@@ -28,7 +28,7 @@ class ArbeidsgiverWhitelistKtTest {
     }
 
     @Test
-    fun `tester at ting som ikke er whitelistet returnerer true`() {
+    fun `tester at ting som er whitelistet returnerer true`() {
         listOf(
             // Vanlige spørsmål
             "ANSVARSERKLARING",
