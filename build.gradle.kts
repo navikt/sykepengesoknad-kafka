@@ -1,3 +1,4 @@
+import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 
@@ -6,6 +7,8 @@ repositories {
 }
 
 val kotlinVersion = "1.9.0"
+val kluentVersion = "1.73"
+val junitVersion = "5.8.1"
 
 plugins {
     kotlin("jvm") version "1.9.0"
@@ -40,6 +43,8 @@ tasks.withType<KotlinCompile> {
 
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion")
+    testImplementation("org.amshove.kluent:kluent:$kluentVersion")
+    testImplementation("org.junit.jupiter:junit-jupiter:$junitVersion")
 }
 
 publishing {
@@ -74,4 +79,13 @@ publishing {
             from(components["java"])
         }
     }
+}
+
+tasks.withType<Test> {
+    useJUnitPlatform()
+    testLogging {
+        events("STARTED", "PASSED", "FAILED", "SKIPPED")
+        exceptionFormat = TestExceptionFormat.FULL
+    }
+    failFast = false
 }
