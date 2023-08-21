@@ -1,8 +1,12 @@
 package no.nav.helse.flex.sykepengesoknad.arbeidsgiverwhitelist
 
+import no.nav.helse.flex.sykepengesoknad.kafka.SoknadsstatusDTO
+import no.nav.helse.flex.sykepengesoknad.kafka.SoknadstypeDTO
 import no.nav.helse.flex.sykepengesoknad.kafka.SporsmalDTO
+import no.nav.helse.flex.sykepengesoknad.kafka.SykepengesoknadDTO
 import org.amshove.kluent.`should be false`
 import org.amshove.kluent.`should be true`
+import org.amshove.kluent.shouldHaveSize
 import org.junit.jupiter.api.Test
 
 class ArbeidsgiverWhitelistKtTest {
@@ -78,6 +82,19 @@ class ArbeidsgiverWhitelistKtTest {
         ).forEach { tag ->
             sporsmal(tag).erWhitelistetForArbeidsgiver().`should be true`()
         }
+    }
+
+    @Test
+    fun `tester prossesering av whitelist på søknad `() {
+        val soknad = SykepengesoknadDTO(
+            fnr = "123",
+            sporsmal = listOf(sporsmal("ANDRE_INNTEKTSKILDER_V2"), sporsmal("ARBEID_UNDERVEIS_100_PROSENT_0")),
+            id = "id",
+            status = SoknadsstatusDTO.SENDT,
+            type = SoknadstypeDTO.ARBEIDSTAKERE
+        )
+        soknad.sporsmal!!.shouldHaveSize(2)
+        soknad.whitelistetForArbeidsgiver().sporsmal!!.shouldHaveSize(1)
     }
 
     fun sporsmal(tag: String): SporsmalDTO {

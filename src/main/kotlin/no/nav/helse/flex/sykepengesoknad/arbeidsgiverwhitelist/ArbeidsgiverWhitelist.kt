@@ -1,6 +1,7 @@
 package no.nav.helse.flex.sykepengesoknad.arbeidsgiverwhitelist
 
 import no.nav.helse.flex.sykepengesoknad.kafka.SporsmalDTO
+import no.nav.helse.flex.sykepengesoknad.kafka.SykepengesoknadDTO
 
 private val whitelistetHovedsporsmal = listOf(
     // Vanlige spørsmål
@@ -49,3 +50,6 @@ fun SporsmalDTO.erWhitelistetForArbeidsgiver(): Boolean {
     }
     return this.tag.fjernTagIndex() in whitelistetHovedsporsmal
 }
+
+fun SykepengesoknadDTO.whitelistetForArbeidsgiver(): SykepengesoknadDTO =
+    this.copy(sporsmal = this.sporsmal?.filter { it.erWhitelistetForArbeidsgiver() })
