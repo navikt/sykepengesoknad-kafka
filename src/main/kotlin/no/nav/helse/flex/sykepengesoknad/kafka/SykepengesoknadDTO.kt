@@ -45,5 +45,6 @@ data class SykepengesoknadDTO(
     val egenmeldingsdagerFraSykmelding: List<LocalDate>? = null,
     val merknader: List<String>? = null,
     val sendTilGosys: Boolean? = null,
-    val utenlandskSykmelding: Boolean? = null
+    val utenlandskSykmelding: Boolean? = null,
+    val medlemskapVurdering: String? = null
 )
