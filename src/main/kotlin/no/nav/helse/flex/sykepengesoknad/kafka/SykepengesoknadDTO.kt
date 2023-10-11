@@ -46,5 +46,6 @@ data class SykepengesoknadDTO(
     val merknader: List<String>? = null,
     val sendTilGosys: Boolean? = null,
     val utenlandskSykmelding: Boolean? = null,
-    val medlemskapVurdering: String? = null
+    val medlemskapVurdering: String? = null,
+    val forstegangssoknad: Boolean? = null
 )
