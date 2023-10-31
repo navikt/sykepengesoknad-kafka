@@ -6,7 +6,7 @@ repositories {
     mavenCentral()
 }
 
-val kotlinVersion = "1.9.10"
+val kotlinVersion = "1.9.20"
 val kluentVersion = "1.73"
 val junitVersion = "5.10.0"
 
