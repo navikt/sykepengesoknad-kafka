@@ -8,7 +8,7 @@ repositories {
 
 val kotlinVersion = "1.9.10"
 val kluentVersion = "1.73"
-val junitVersion = "5.10.0"
+val junitVersion = "5.10.1"
 
 plugins {
     kotlin("jvm") version "1.9.10"
