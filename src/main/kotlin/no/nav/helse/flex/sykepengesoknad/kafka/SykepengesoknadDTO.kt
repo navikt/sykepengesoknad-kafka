@@ -47,5 +47,6 @@ data class SykepengesoknadDTO(
     val sendTilGosys: Boolean? = null,
     val utenlandskSykmelding: Boolean? = null,
     val medlemskapVurdering: String? = null,
-    val forstegangssoknad: Boolean? = null
+    val forstegangssoknad: Boolean? = null,
+    val tidligereArbeidsgiverOrgnummer: String? = null
 )
