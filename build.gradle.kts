@@ -11,7 +11,7 @@ val kluentVersion = "1.73"
 val junitVersion = "5.10.1"
 
 plugins {
-    kotlin("jvm") version "1.9.20"
+    kotlin("jvm") version "1.9.21"
     id("java")
     id("maven-publish")
 }
