@@ -28,6 +28,7 @@ private val whitelistetHovedsporsmal = listOf(
     // sisteside
     "VAER_KLAR_OVER_AT",
     "BEKREFT_OPPLYSNINGER",
+    "TIL_SLUTT",
 
     // deprecated spørsmål vi likevel støtter
     "UTDANNING",
