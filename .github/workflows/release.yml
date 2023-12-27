@@ -37,7 +37,7 @@ jobs:
       - name: test and build
         run: ./gradlew -Pversion="$(echo $VERSION)" build
       - name: upload artifact
-        if: github.ref == 'refs/heads/master'
+        if: github.ref_name == 'main'
         run: ./gradlew -Pversion="$(echo $VERSION)" publish
         env:
           GITHUB_USERNAME: x-access-token
