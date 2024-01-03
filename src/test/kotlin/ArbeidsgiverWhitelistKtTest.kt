@@ -10,7 +10,6 @@ import org.amshove.kluent.shouldHaveSize
 import org.junit.jupiter.api.Test
 
 class ArbeidsgiverWhitelistKtTest {
-
     @Test
     fun `tester at ting som ikke er whitelistet returnerer false`() {
         listOf(
@@ -25,7 +24,7 @@ class ArbeidsgiverWhitelistKtTest {
             "MEDLEMSKAP_OPPHOLDSTILLATELSE",
             "MEDLEMSKAP_UTFORT_ARBEID_UTENFOR_NORGE",
             "MEDLEMSKAP_OPPHOLD_UTENFOR_EOS",
-            "MEDLEMSKAP_OPPHOLD_UTENFOR_NORGE"
+            "MEDLEMSKAP_OPPHOLD_UTENFOR_NORGE",
         ).forEach { tag ->
             sporsmal(tag).erWhitelistetForArbeidsgiver().`should be false`()
         }
@@ -55,22 +54,18 @@ class ArbeidsgiverWhitelistKtTest {
             "ARBEID_UNDERVEIS_100_PROSENT_0",
             "ARBEID_UNDERVEIS_100_PROSENT_1",
             "ARBEID_UNDERVEIS_100_PROSENT_122",
-
             // behandlingsdager
             "FRAVER_FOR_BEHANDLING",
             "ENKELTSTAENDE_BEHANDLINGSDAGER",
-
             // gradert reisetilskudd
             "BRUKTE_REISETILSKUDDET",
             "TRANSPORT_TIL_DAGLIG",
             "REISE_MED_BIL",
             "KVITTERINGER",
             "UTBETALING",
-
             // sisteside
             "VAER_KLAR_OVER_AT",
             "BEKREFT_OPPLYSNINGER",
-
             // deprecated spørsmål vi likevel støtter
             "UTDANNING",
             "FERIE_PERMISJON_UTLAND",
@@ -78,7 +73,7 @@ class ArbeidsgiverWhitelistKtTest {
             "PERMITTERT_NAA",
             "PERMITTERT_PERIODE",
             "FRAVAR_FOR_SYKMELDINGEN",
-            "UTLAND"
+            "UTLAND",
         ).forEach { tag ->
             sporsmal(tag).erWhitelistetForArbeidsgiver().`should be true`()
         }
@@ -86,13 +81,14 @@ class ArbeidsgiverWhitelistKtTest {
 
     @Test
     fun `tester prossesering av whitelist på søknad `() {
-        val soknad = SykepengesoknadDTO(
-            fnr = "123",
-            sporsmal = listOf(sporsmal("ANDRE_INNTEKTSKILDER_V2"), sporsmal("ARBEID_UNDERVEIS_100_PROSENT_0")),
-            id = "id",
-            status = SoknadsstatusDTO.SENDT,
-            type = SoknadstypeDTO.ARBEIDSTAKERE
-        )
+        val soknad =
+            SykepengesoknadDTO(
+                fnr = "123",
+                sporsmal = listOf(sporsmal("ANDRE_INNTEKTSKILDER_V2"), sporsmal("ARBEID_UNDERVEIS_100_PROSENT_0")),
+                id = "id",
+                status = SoknadsstatusDTO.SENDT,
+                type = SoknadstypeDTO.ARBEIDSTAKERE,
+            )
         soknad.sporsmal!!.shouldHaveSize(2)
         soknad.whitelistetForArbeidsgiver().sporsmal!!.shouldHaveSize(1)
     }

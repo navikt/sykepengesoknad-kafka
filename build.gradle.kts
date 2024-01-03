@@ -1,19 +1,15 @@
 import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
+plugins {
+    id("java")
+    id("maven-publish")
+    id("org.jlleitschuh.gradle.ktlint") version "12.0.3"
+    kotlin("jvm") version "1.9.22"
+}
 
 repositories {
     mavenCentral()
-}
-
-val kotlinVersion = "1.9.20"
-val kluentVersion = "1.73"
-val junitVersion = "5.10.1"
-
-plugins {
-    kotlin("jvm") version "1.9.20"
-    id("java")
-    id("maven-publish")
 }
 
 group = "no.nav.helse.flex"
@@ -21,28 +17,15 @@ version = properties["version"] ?: "local-build"
 description = "sykepengesoknad-kafka"
 java.sourceCompatibility = JavaVersion.VERSION_14
 
-buildscript {
-    repositories {
-        maven("https://plugins.gradle.org/m2/")
-    }
-    dependencies {
-        classpath("org.jlleitschuh.gradle:ktlint-gradle:11.6.1")
-    }
-}
-
-apply(plugin = "org.jetbrains.kotlin.jvm")
-apply(plugin = "org.jlleitschuh.gradle.ktlint")
-
-repositories {
-    mavenCentral()
-}
-
 tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = "14"
 }
 
+val kluentVersion = "1.73"
+val junitVersion = "5.10.1"
+
 dependencies {
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion")
+    implementation(kotlin("stdlib"))
     testImplementation("org.amshove.kluent:kluent:$kluentVersion")
     testImplementation("org.junit.jupiter:junit-jupiter:$junitVersion")
 }

@@ -49,5 +49,5 @@ data class SykepengesoknadDTO(
     val utenlandskSykmelding: Boolean? = null,
     val medlemskapVurdering: String? = null,
     val forstegangssoknad: Boolean? = null,
-    val tidligereArbeidsgiverOrgnummer: String? = null
+    val tidligereArbeidsgiverOrgnummer: String? = null,
 )
