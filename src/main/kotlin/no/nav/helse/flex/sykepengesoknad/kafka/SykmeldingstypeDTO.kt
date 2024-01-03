@@ -5,5 +5,5 @@ enum class SykmeldingstypeDTO {
     GRADERT,
     BEHANDLINGSDAGER,
     AVVENTENDE,
-    REISETILSKUDD
+    REISETILSKUDD,
 }

@@ -10,5 +10,5 @@ data class SporsmalDTO(
     val svartype: SvartypeDTO? = null,
     val kriterieForVisningAvUndersporsmal: VisningskriteriumDTO? = null,
     val svar: List<SvarDTO>? = null,
-    val undersporsmal: List<SporsmalDTO>? = null
+    val undersporsmal: List<SporsmalDTO>? = null,
 )

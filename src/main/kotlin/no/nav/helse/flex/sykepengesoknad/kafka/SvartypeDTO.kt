@@ -26,5 +26,5 @@ enum class SvartypeDTO {
     KVITTERING,
     DATOER,
     BELOP,
-    KILOMETER
+    KILOMETER,
 }

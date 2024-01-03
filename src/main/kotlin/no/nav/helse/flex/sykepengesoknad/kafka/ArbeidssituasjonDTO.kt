@@ -5,5 +5,5 @@ enum class ArbeidssituasjonDTO {
     FRILANSER,
     ARBEIDSTAKER,
     ARBEIDSLEDIG,
-    ANNET
+    ANNET,
 }

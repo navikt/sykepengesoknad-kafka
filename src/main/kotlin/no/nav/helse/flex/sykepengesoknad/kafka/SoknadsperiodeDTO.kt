@@ -10,5 +10,6 @@ data class SoknadsperiodeDTO(
     val avtaltTimer: Double? = null,
     val faktiskTimer: Double? = null,
     val sykmeldingstype: SykmeldingstypeDTO? = null,
-    val grad: Int? = null // Fra gammel SoknadDTO. Bør konsolideres med sykmeldingsgrad
+    // Fra gammel SoknadDTO. Bør konsolideres med sykmeldingsgrad.
+    val grad: Int? = null,
 )

@@ -7,5 +7,5 @@ enum class SoknadsstatusDTO {
     KORRIGERT,
     AVBRUTT,
     SLETTET,
-    UTGAATT
+    UTGAATT,
 }
