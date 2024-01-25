@@ -1,4 +1,5 @@
 import org.gradle.api.tasks.testing.logging.TestExceptionFormat
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
@@ -15,10 +16,17 @@ repositories {
 group = "no.nav.helse.flex"
 version = properties["version"] ?: "local-build"
 description = "sykepengesoknad-kafka"
-java.sourceCompatibility = JavaVersion.VERSION_14
+java.sourceCompatibility = JavaVersion.VERSION_21
 
 tasks.withType<KotlinCompile> {
-    kotlinOptions.jvmTarget = "14"
+    compilerOptions {
+        jvmTarget.set(JvmTarget.JVM_21)
+        freeCompilerArgs.add("-Xjsr305=strict")
+
+        if (System.getenv("CI") == "true") {
+            allWarningsAsErrors.set(true)
+        }
+    }
 }
 
 val kluentVersion = "1.73"
