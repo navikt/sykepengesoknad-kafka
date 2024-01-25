@@ -50,4 +50,5 @@ data class SykepengesoknadDTO(
     val medlemskapVurdering: String? = null,
     val forstegangssoknad: Boolean? = null,
     val tidligereArbeidsgiverOrgnummer: String? = null,
+    val fiskerBlad: FiskerBladDTO? = null
 )
