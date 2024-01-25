@@ -23,6 +23,10 @@ private val whitelistetHovedsporsmal =
         "REISE_MED_BIL",
         "KVITTERINGER",
         "UTBETALING",
+        // sisteside
+        "VAER_KLAR_OVER_AT",
+        "BEKREFT_OPPLYSNINGER",
+        "TIL_SLUTT",
         // deprecated spørsmål vi likevel støtter
         "UTDANNING",
         "FERIE_PERMISJON_UTLAND",
