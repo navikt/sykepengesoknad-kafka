@@ -1,6 +1,5 @@
-import org.gradle.api.tasks.testing.logging.TestExceptionFormat
+import org.gradle.api.tasks.testing.logging.TestExceptionFormat.FULL
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     id("java")
@@ -18,22 +17,10 @@ version = properties["version"] ?: "local-build"
 description = "sykepengesoknad-kafka"
 java.sourceCompatibility = JavaVersion.VERSION_21
 
-tasks.withType<KotlinCompile> {
-    compilerOptions {
-        jvmTarget.set(JvmTarget.JVM_21)
-        freeCompilerArgs.add("-Xjsr305=strict")
-
-        if (System.getenv("CI") == "true") {
-            allWarningsAsErrors.set(true)
-        }
-    }
-}
-
 val kluentVersion = "1.73"
 val junitVersion = "5.10.1"
 
 dependencies {
-    implementation(kotlin("stdlib"))
     testImplementation("org.amshove.kluent:kluent:$kluentVersion")
     testImplementation("org.junit.jupiter:junit-jupiter:$junitVersion")
 }
@@ -72,11 +59,24 @@ publishing {
     }
 }
 
-tasks.withType<Test> {
-    useJUnitPlatform()
-    testLogging {
-        events("STARTED", "PASSED", "FAILED", "SKIPPED")
-        exceptionFormat = TestExceptionFormat.FULL
+kotlin {
+    compilerOptions {
+        jvmTarget.set(JvmTarget.JVM_21)
+        freeCompilerArgs.add("-Xjsr305=strict")
+        if (System.getenv("CI") == "true") {
+            allWarningsAsErrors.set(true)
+        }
     }
-    failFast = false
+}
+
+tasks {
+    test {
+        useJUnitPlatform()
+        jvmArgs("-XX:+EnableDynamicAgentLoading")
+        testLogging {
+            events("PASSED", "FAILED", "SKIPPED")
+            exceptionFormat = FULL
+        }
+        failFast = false
+    }
 }
