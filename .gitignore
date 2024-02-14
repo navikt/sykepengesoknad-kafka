@@ -7,3 +7,5 @@ transaction-logs
 out/
 build/
 .gradle/
+
+.DS_Store
