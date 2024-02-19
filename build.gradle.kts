@@ -18,7 +18,7 @@ description = "sykepengesoknad-kafka"
 java.sourceCompatibility = JavaVersion.VERSION_21
 
 val kluentVersion = "1.73"
-val junitVersion = "5.10.1"
+val junitVersion = "5.10.2"
 
 dependencies {
     testImplementation("org.amshove.kluent:kluent:$kluentVersion")
