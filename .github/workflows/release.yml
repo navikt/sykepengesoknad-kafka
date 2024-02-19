@@ -24,7 +24,7 @@ jobs:
           VERSION=$TIME-$COMMIT
           echo "VERSION=$VERSION" >> $GITHUB_ENV
       - name: Setup gradle dependency cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             ~/.gradle/caches
