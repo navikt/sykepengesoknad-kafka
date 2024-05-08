@@ -5,7 +5,7 @@ plugins {
     id("java")
     id("maven-publish")
     id("org.jlleitschuh.gradle.ktlint") version "12.1.0"
-    kotlin("jvm") version "1.9.23"
+    kotlin("jvm") version "1.9.24"
 }
 
 repositories {
