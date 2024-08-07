@@ -71,6 +71,7 @@ class ArbeidsgiverWhitelistKtTest {
             "PERMITTERT_PERIODE",
             "FRAVAR_FOR_SYKMELDINGEN",
             "UTLAND",
+            "OPPHOLD_UTENFOR_EOS",
         ).forEach { tag ->
             sporsmal(tag).erWhitelistetForArbeidsgiver().`should be true`()
         }
