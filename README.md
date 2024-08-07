@@ -1,4 +1,4 @@
-    # sykepengesoknad-kafka
+# sykepengesoknad-kafka
 
 ## Om sykepengesoknad-kafka
 Definerer domeneobjektet på flex.sykepengesoknad kafkatopicet
