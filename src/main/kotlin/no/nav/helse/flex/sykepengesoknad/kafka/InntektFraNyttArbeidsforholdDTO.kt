@@ -8,6 +8,8 @@ data class InntektFraNyttArbeidsforholdDTO(
     val forsteArbeidsdag: LocalDate,
     val forstegangssporsmal: Boolean,
     val belopPerDag: Int,
+    val belop: Int,
+    val virkedager: Int,
     val arbeidsstedOrgnummer: String,
     val opplysningspliktigOrgnummer: String,
 )
