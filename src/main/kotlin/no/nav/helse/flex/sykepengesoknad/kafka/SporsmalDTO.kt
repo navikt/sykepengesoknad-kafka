@@ -1,5 +1,7 @@
 package no.nav.helse.flex.sykepengesoknad.kafka
 
+import com.fasterxml.jackson.databind.JsonNode
+
 data class SporsmalDTO(
     val id: String? = null,
     val tag: String? = null,
@@ -11,4 +13,5 @@ data class SporsmalDTO(
     val kriterieForVisningAvUndersporsmal: VisningskriteriumDTO? = null,
     val svar: List<SvarDTO>? = null,
     val undersporsmal: List<SporsmalDTO>? = null,
+    val metadata: JsonNode? = null,
 )
