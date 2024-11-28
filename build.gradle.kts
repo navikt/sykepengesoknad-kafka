@@ -21,7 +21,7 @@ val kluentVersion = "1.73"
 val junitVersion = "5.11.2"
 
 dependencies {
-    api("com.fasterxml.jackson.core:jackson-databind:2.18.0")
+    api("com.fasterxml.jackson.core:jackson-databind:2.18.2")
 
     testImplementation("org.amshove.kluent:kluent:$kluentVersion")
     testImplementation("org.junit.jupiter:junit-jupiter:$junitVersion")
