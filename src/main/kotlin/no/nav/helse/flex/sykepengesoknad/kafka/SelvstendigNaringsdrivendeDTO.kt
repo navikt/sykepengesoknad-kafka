@@ -1,11 +1,10 @@
 package no.nav.helse.flex.sykepengesoknad.kafka
 
 data class SelvstendigNaringsdrivendeDTO(
-    val organisasjon: Organisasjon,
+    val roller: List<Rolle>,
 )
 
-data class Organisasjon(
+data class Rolle(
     val orgnummer: String,
-    val orgnavn: String,
-    val organisasjonsform: String,
+    val rolletype: String,
 )
