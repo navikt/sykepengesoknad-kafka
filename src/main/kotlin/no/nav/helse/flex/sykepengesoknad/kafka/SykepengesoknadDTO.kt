@@ -52,6 +52,7 @@ data class SykepengesoknadDTO(
     val tidligereArbeidsgiverOrgnummer: String? = null,
     val fiskerBlad: FiskerBladDTO? = null,
     val inntektFraNyttArbeidsforhold: List<InntektFraNyttArbeidsforholdDTO>? = null,
+    val selvstendigNaringsdrivende: SelvstendigNaringsdrivendeDTO? = null,
     val friskTilArbeidVedtakId: String? = null,
     val friskTilArbeidVedtakPeriode: String? = null,
 )
