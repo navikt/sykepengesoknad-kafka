@@ -55,5 +55,5 @@ data class SykepengesoknadDTO(
     val selvstendigNaringsdrivende: SelvstendigNaringsdrivendeDTO? = null,
     val friskTilArbeidVedtakId: String? = null,
     val friskTilArbeidVedtakPeriode: String? = null,
-    val avregistrertArbeidssokerFom: LocalDate? = null,
+    val fortsattArbeidssoker: Boolean? = null,
 )
