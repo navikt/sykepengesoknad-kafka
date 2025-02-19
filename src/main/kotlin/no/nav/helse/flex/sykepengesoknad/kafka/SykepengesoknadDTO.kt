@@ -56,4 +56,5 @@ data class SykepengesoknadDTO(
     val friskTilArbeidVedtakId: String? = null,
     val friskTilArbeidVedtakPeriode: String? = null,
     val fortsattArbeidssoker: Boolean? = null,
+    val inntektUnderveis: Boolean? = null,
 )
