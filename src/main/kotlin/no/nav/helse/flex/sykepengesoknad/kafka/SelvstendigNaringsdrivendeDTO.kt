@@ -35,10 +35,10 @@ data class HentPensjonsgivendeInntektResponseDTO(
 data class PensjonsgivendeInntektDTO(
     val datoForFastsetting: String,
     val skatteordning: SkatteordningDTO,
-    val pensjonsgivendeInntektAvLoennsinntekt: Int = 0,
-    val pensjonsgivendeInntektAvLoennsinntektBarePensjonsdel: Int = 0,
-    val pensjonsgivendeInntektAvNaeringsinntekt: Int = 0,
-    val pensjonsgivendeInntektAvNaeringsinntektFraFiskeFangstEllerFamiliebarnehage: Int = 0,
+    val pensjonsgivendeInntektAvLoennsinntekt: Int,
+    val pensjonsgivendeInntektAvLoennsinntektBarePensjonsdel: Int,
+    val pensjonsgivendeInntektAvNaeringsinntekt: Int,
+    val pensjonsgivendeInntektAvNaeringsinntektFraFiskeFangstEllerFamiliebarnehage: Int,
 )
 
 enum class SkatteordningDTO {
