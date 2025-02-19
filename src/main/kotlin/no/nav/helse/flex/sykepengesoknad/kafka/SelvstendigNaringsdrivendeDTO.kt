@@ -26,7 +26,6 @@ data class SykepengegrunnlagNaeringsdrivendeDTO(
     val inntekter: List<HentPensjonsgivendeInntektResponseDTO>,
 )
 
-
 data class HentPensjonsgivendeInntektResponseDTO(
     val norskPersonidentifikator: String,
     val inntektsaar: String,
