@@ -3,7 +3,7 @@ package no.nav.helse.flex.sykepengesoknad.kafka
 import java.math.BigInteger
 
 data class SelvstendigNaringsdrivendeDTO(
-    val roller: List<Rolle>,
+    val roller: List<RolleDTO>,
     val sykepengegrunnlagNaeringsdrivende: SykepengegrunnlagNaeringsdrivendeDTO? = null,
 )
 
@@ -48,7 +48,7 @@ enum class SkatteordningDTO {
     KILDESKATT_PAA_LOENN,
 }
 
-data class Rolle(
+data class RolleDTO(
     val orgnummer: String,
     val rolletype: String,
 )
