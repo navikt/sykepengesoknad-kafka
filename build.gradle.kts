@@ -18,7 +18,7 @@ description = "sykepengesoknad-kafka"
 java.sourceCompatibility = JavaVersion.VERSION_21
 
 val kluentVersion = "1.73"
-val junitVersion = "5.11.4"
+val junitVersion = "5.12.2"
 
 dependencies {
     api("com.fasterxml.jackson.core:jackson-databind:2.19.0")
