@@ -91,7 +91,5 @@ class ArbeidsgiverWhitelistKtTest {
         soknad.whitelistetForArbeidsgiver().sporsmal!!.shouldHaveSize(1)
     }
 
-    fun sporsmal(tag: String): SporsmalDTO {
-        return SporsmalDTO(tag = tag)
-    }
+    fun sporsmal(tag: String): SporsmalDTO = SporsmalDTO(tag = tag)
 }
