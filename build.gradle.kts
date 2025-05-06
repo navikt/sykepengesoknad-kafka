@@ -61,6 +61,10 @@ publishing {
     }
 }
 
+ktlint {
+    version.set("1.5.0")
+}
+
 kotlin {
     compilerOptions {
         jvmTarget.set(JvmTarget.JVM_21)
