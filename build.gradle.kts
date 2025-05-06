@@ -18,13 +18,16 @@ description = "sykepengesoknad-kafka"
 java.sourceCompatibility = JavaVersion.VERSION_21
 
 val kluentVersion = "1.73"
-val junitVersion = "5.11.4"
+val junitVersion = "5.12.2"
 
 dependencies {
     api("com.fasterxml.jackson.core:jackson-databind:2.19.0")
 
+    testImplementation(platform("org.junit:junit-bom:$junitVersion"))
+    testImplementation("org.junit.jupiter:junit-jupiter")
+    // Forhindrer bruk av Gradles innebygde launcher med annen versjon.
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
     testImplementation("org.amshove.kluent:kluent:$kluentVersion")
-    testImplementation("org.junit.jupiter:junit-jupiter:$junitVersion")
 }
 
 publishing {
