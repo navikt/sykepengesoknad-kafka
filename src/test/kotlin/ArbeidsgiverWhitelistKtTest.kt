@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test
 
 class ArbeidsgiverWhitelistKtTest {
     @Test
-    fun `tester at ting som ikke er whitelistet returnerer false`() {
+    fun `Ting som ikke er whitelistet returnerer false`() {
         listOf(
             "YRKESSKADE",
             "YRKESSKADE_V2",
@@ -31,7 +31,7 @@ class ArbeidsgiverWhitelistKtTest {
     }
 
     @Test
-    fun `tester at ting som er whitelistet returnerer true`() {
+    fun `Ting som er whitelistet returnerer true`() {
         listOf(
             // Vanlige spørsmål
             "ANSVARSERKLARING",
@@ -78,7 +78,7 @@ class ArbeidsgiverWhitelistKtTest {
     }
 
     @Test
-    fun `tester prossesering av whitelist på søknad `() {
+    fun `Prossesering av whitelist på søknad `() {
         val soknad =
             SykepengesoknadDTO(
                 fnr = "123",
