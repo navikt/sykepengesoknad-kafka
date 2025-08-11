@@ -3,6 +3,7 @@ package no.nav.helse.flex.sykepengesoknad.kafka
 data class SelvstendigNaringsdrivendeDTO(
     val roller: List<RolleDTO>,
     val naringsdrivendeInntekt: NaringsdrivendeInntektDTO? = null,
+    val naringsdrivendeVenteperiode: PeriodeDTO? = null,
 )
 
 data class NaringsdrivendeInntektDTO(
