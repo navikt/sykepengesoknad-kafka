@@ -1,23 +1,32 @@
 package no.nav.helse.flex.sykepengesoknad.kafka
 
+import java.time.LocalDate
+
 data class SelvstendigNaringsdrivendeDTO(
     val roller: List<RolleDTO>,
-    val naringsdrivendeInntekt: NaringsdrivendeInntektDTO? = null,
-    val naringsdrivendeVenteperiode: PeriodeDTO? = null,
+    val inntekt: InntektDTO? = null,
+    val ventetid: VentetidDTO? = null,
 )
 
-data class NaringsdrivendeInntektDTO(
+data class VentetidDTO(
+    val fom: LocalDate?,
+    val tom: LocalDate?,
+)
+
+data class InntektDTO(
     val norskPersonidentifikator: String,
-    val inntekt: List<NaringsdrivendeInntektsAarDTO>,
+    val inntektsAar: List<InntektsAarDTO>,
 )
 
-data class NaringsdrivendeInntektsAarDTO(
-    val inntektsaar: String,
-    val pensjonsgivendeInntekt: SummertPensjonsgivendeInntektDTO,
+data class InntektsAarDTO(
+    val aar: String,
+    val pensjonsgivendeInntekt: PensjonsgivendeInntektDTO,
 )
 
-// Inneholder summert verdier for skatteordningene SVALBARD og FASTLAND.
-data class SummertPensjonsgivendeInntektDTO(
+/**
+ * Inneholder summert verdier for skatteordningene SVALBARD og FASTLAND.
+ */
+data class PensjonsgivendeInntektDTO(
     val pensjonsgivendeInntektAvLoennsinntekt: Int? = 0,
     val pensjonsgivendeInntektAvLoennsinntektBarePensjonsdel: Int? = 0,
     val pensjonsgivendeInntektAvNaeringsinntekt: Int? = 0,
