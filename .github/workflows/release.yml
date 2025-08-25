@@ -1,6 +1,7 @@
-name: Publish artifacts
+name: Publish Artifacts
 on:
   push:
+
 jobs:
   build_and_release:
     permissions:
@@ -13,18 +14,15 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '21'
-      - name: Checkout code
-        uses: actions/checkout@v4
-      - name: Gradle wrapper validation
-        uses: gradle/wrapper-validation-action@v3
-      - name: Generer versjon
+      - uses: actions/checkout@v4
+      - uses: gradle/actions/wrapper-validation@v4
+      - name: Generate Version
         run: |
           TIME=$(TZ="Europe/Oslo" date +%Y.%m.%d-%H.%M)
           COMMIT=$(git rev-parse --short=8 HEAD)
           VERSION=$TIME-$COMMIT
           echo "VERSION=$VERSION" >> $GITHUB_ENV
-      - name: Setup gradle dependency cache
-        uses: actions/cache@v4
+      - uses: actions/cache@v4
         with:
           path: |
             ~/.gradle/caches
@@ -34,9 +32,9 @@ jobs:
             ${{ runner.os }}-gradle-
       - name: Lint
         run: ./gradlew ktlintCheck
-      - name: test and build
+      - name: Build
         run: ./gradlew -Pversion="$(echo $VERSION)" build
-      - name: upload artifact
+      - name: Publish
         if: github.ref_name == 'main'
         run: ./gradlew -Pversion="$(echo $VERSION)" publish
         env:
