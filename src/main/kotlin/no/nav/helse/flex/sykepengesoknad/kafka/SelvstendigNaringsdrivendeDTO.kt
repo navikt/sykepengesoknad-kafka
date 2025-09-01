@@ -9,8 +9,8 @@ data class SelvstendigNaringsdrivendeDTO(
 )
 
 data class VentetidDTO(
-    val fom: LocalDate?,
-    val tom: LocalDate?,
+    val fom: LocalDate,
+    val tom: LocalDate,
 )
 
 data class InntektDTO(
