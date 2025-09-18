@@ -42,7 +42,8 @@ class NaringsdrivendeInntektDTOTest {
 
         naringsdrivendeInntekt.inntektsAar.first().also {
             it.aar `should be equal to` "2024"
-            it.pensjonsgivendeInntekt.pensjonsgivendeInntektAvLoennsinntekt `should be equal to` 100000
+            it.erFerdigLignet `should be equal to` true
+            it.pensjonsgivendeInntekt!!.pensjonsgivendeInntektAvLoennsinntekt `should be equal to` 100000
             it.pensjonsgivendeInntekt.pensjonsgivendeInntektAvLoennsinntektBarePensjonsdel `should be equal to` 50000
             it.pensjonsgivendeInntekt.pensjonsgivendeInntektAvNaeringsinntekt `should be equal to` 300000
             it.pensjonsgivendeInntekt.pensjonsgivendeInntektAvNaeringsinntektFraFiskeFangstEllerFamiliebarnehage `should be equal to` 12000
@@ -50,10 +51,22 @@ class NaringsdrivendeInntektDTOTest {
 
         naringsdrivendeInntekt.inntektsAar.last().also {
             it.aar `should be equal to` "2025"
-            it.pensjonsgivendeInntekt.pensjonsgivendeInntektAvLoennsinntekt `should be equal to` 800000
+            it.erFerdigLignet `should be equal to` true
+            it.pensjonsgivendeInntekt!!.pensjonsgivendeInntektAvLoennsinntekt `should be equal to` 800000
             it.pensjonsgivendeInntekt.pensjonsgivendeInntektAvLoennsinntektBarePensjonsdel `should be equal to` 60000
             it.pensjonsgivendeInntekt.pensjonsgivendeInntektAvNaeringsinntekt `should be equal to` 400000
             it.pensjonsgivendeInntekt.pensjonsgivendeInntektAvNaeringsinntektFraFiskeFangstEllerFamiliebarnehage `should be equal to` 9000
         }
+    }
+
+    @Test
+    fun `InntektsAarDTO som mangler pensjonsgivendeInntekt skal tolkes som ikke ferdig lignet`() {
+        val inntektsAar =
+            InntektsAarDTO(
+                aar = "2025",
+                pensjonsgivendeInntekt = null,
+            )
+
+        inntektsAar.erFerdigLignet `should be equal to` false
     }
 }
