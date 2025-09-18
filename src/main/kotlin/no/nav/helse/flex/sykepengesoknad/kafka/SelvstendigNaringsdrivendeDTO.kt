@@ -21,9 +21,8 @@ data class InntektDTO(
 data class InntektsAarDTO(
     val aar: String,
     val pensjonsgivendeInntekt: PensjonsgivendeInntektDTO?,
-) {
-    val erFerdigLignet: Boolean = pensjonsgivendeInntekt != null
-}
+    val erFerdigLignet: Boolean = pensjonsgivendeInntekt != null,
+)
 
 /**
  * Inneholder summert verdier for skatteordningene SVALBARD og FASTLAND.
