@@ -6,6 +6,12 @@ data class SelvstendigNaringsdrivendeDTO(
     val roller: List<RolleDTO>,
     val inntekt: InntektDTO? = null,
     val ventetid: VentetidDTO? = null,
+    val syketilfelleHistorikk: SyketilfelleHistorikkDTO? = null,
+)
+
+data class SyketilfelleHistorikkDTO(
+    val meldingTilNavDager: List<LocalDate> = emptyList(),
+    val perioderInnenforVentetid: List<PeriodeDTO> = emptyList(),
 )
 
 data class VentetidDTO(
