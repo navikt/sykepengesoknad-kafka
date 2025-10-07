@@ -8,7 +8,7 @@ data class SelvstendigNaringsdrivendeDTO(
     val ventetid: VentetidDTO? = null,
     val syketilfelleHistorikk: SyketilfelleHistorikkDTO? = null,
     val hovedSporsmalSvar: Map<String, Boolean> = emptyMap(),
-    val harForsikring: Boolean? = null,
+    val harForsikring: Boolean,
 )
 
 data class SyketilfelleHistorikkDTO(
