@@ -28,4 +28,5 @@ enum class SvartypeDTO {
     DATOER,
     BELOP,
     KILOMETER,
+    AAR_MAANED,
 }
