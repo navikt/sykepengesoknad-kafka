@@ -5,7 +5,6 @@ import java.time.LocalDate
 data class SelvstendigNaringsdrivendeDTO(
     val roller: List<RolleDTO>,
     val inntekt: InntektDTO? = null,
-    val ventetid: VentetidDTO? = null,
     val syketilfelleHistorikk: SyketilfelleHistorikkDTO? = null,
     val hovedSporsmalSvar: Map<String, Boolean> = emptyMap(),
     val brukerHarOppgittForsikring: Boolean,
@@ -14,11 +13,6 @@ data class SelvstendigNaringsdrivendeDTO(
 data class SyketilfelleHistorikkDTO(
     val meldingTilNavDager: List<LocalDate> = emptyList(),
     val perioderInnenforVentetid: List<PeriodeDTO> = emptyList(),
-)
-
-data class VentetidDTO(
-    val fom: LocalDate,
-    val tom: LocalDate,
 )
 
 data class InntektDTO(
