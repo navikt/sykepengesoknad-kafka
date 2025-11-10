@@ -1,5 +1,7 @@
+import com.fasterxml.jackson.annotation.JsonTypeInfo
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.databind.SerializationFeature
+import com.fasterxml.jackson.databind.jsontype.impl.LaissezFaireSubTypeValidator
 import com.fasterxml.jackson.module.jsonSchema.JsonSchemaGenerator
 import com.fasterxml.jackson.module.kotlin.KotlinModule
 import org.gradle.api.Plugin
@@ -30,6 +32,11 @@ class GenerateJsonSchemaPlugin : Plugin<Project> {
                     ObjectMapper()
                         .registerModule(KotlinModule.Builder().build())
                         .enable(SerializationFeature.INDENT_OUTPUT)
+                        .activateDefaultTyping(
+                            LaissezFaireSubTypeValidator.instance,
+                            ObjectMapper.DefaultTyping.NON_FINAL,
+                            JsonTypeInfo.As.PROPERTY,
+                        )
 
                 val generator = JsonSchemaGenerator(mapper)
                 val schema = generator.generateSchema(clazz)
