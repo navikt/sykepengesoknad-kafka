@@ -4,7 +4,7 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 plugins {
     id("java")
     id("maven-publish")
-    id("org.jlleitschuh.gradle.ktlint") version "12.2.0"
+    id("org.jlleitschuh.gradle.ktlint") version "14.0.1"
     kotlin("jvm") version "2.1.20"
 }
 
