@@ -44,6 +44,7 @@ data class SykepengesoknadDTO(
     val permitteringer: List<PeriodeDTO>? = null,
     val merknaderFraSykmelding: List<MerknadDTO>? = null,
     val egenmeldingsdagerFraSykmelding: List<LocalDate>? = null,
+    val meldingTilNavDagerFraSykmelding: List<PeriodeDTO>? = null,
     val merknader: List<String>? = null,
     val sendTilGosys: Boolean? = null,
     val utenlandskSykmelding: Boolean? = null,
