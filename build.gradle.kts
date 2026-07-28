@@ -13,7 +13,7 @@ repositories {
 }
 
 group = "no.nav.helse.flex"
-version = properties["version"] ?: "local-build"
+version = findProperty("version") ?: "local-build"
 description = "sykepengesoknad-kafka"
 java.sourceCompatibility = JavaVersion.VERSION_21
 
@@ -21,8 +21,6 @@ val kluentVersion = "1.73"
 val junitVersion = "5.13.4"
 
 dependencies {
-    api("com.fasterxml.jackson.core:jackson-databind:2.19.0")
-
     testImplementation(platform("org.junit:junit-bom:$junitVersion"))
     testImplementation("org.junit.jupiter:junit-jupiter")
     // Forhindrer bruk av Gradles innebygde launcher med annen Kotlin-versjon.
