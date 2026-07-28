@@ -5,7 +5,7 @@ plugins {
     id("java")
     id("maven-publish")
     id("org.jlleitschuh.gradle.ktlint") version "12.2.0"
-    kotlin("jvm") version "2.1.20"
+    kotlin("jvm") version "2.4.10"
 }
 
 repositories {
@@ -25,7 +25,7 @@ dependencies {
 
     testImplementation(platform("org.junit:junit-bom:$junitVersion"))
     testImplementation("org.junit.jupiter:junit-jupiter")
-    // Forhindrer bruk av Gradles innebygde launcher med annen versjon.
+    // Forhindrer bruk av Gradles innebygde launcher med annen Kotlin-versjon.
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
     testImplementation("org.amshove.kluent:kluent:$kluentVersion")
 }
