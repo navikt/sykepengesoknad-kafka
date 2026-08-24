@@ -18,7 +18,7 @@ description = "sykepengesoknad-kafka"
 java.sourceCompatibility = JavaVersion.VERSION_21
 
 val kluentVersion = "1.73"
-val junitVersion = "5.13.4"
+val junitVersion = "6.1.3"
 
 dependencies {
     testImplementation(platform("org.junit:junit-bom:$junitVersion"))
