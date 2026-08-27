@@ -13,7 +13,7 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '21'
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
       - uses: gradle/actions/wrapper-validation@v6
       - name: Generer versjon
         run: |
