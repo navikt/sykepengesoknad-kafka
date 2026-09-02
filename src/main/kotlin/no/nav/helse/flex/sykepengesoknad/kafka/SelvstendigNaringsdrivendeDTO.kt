@@ -16,6 +16,7 @@ data class InntektsAarDTO(
     val aar: String,
     val pensjonsgivendeInntekt: PensjonsgivendeInntektDTO?,
     val erFerdigLignet: Boolean = pensjonsgivendeInntekt != null,
+    val datoForFastsettelse: String? = null,
 )
 
 /**
