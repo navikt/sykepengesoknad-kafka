@@ -1,5 +1,7 @@
 package no.nav.helse.flex.sykepengesoknad.kafka
 
+import java.time.LocalDate
+
 data class SelvstendigNaringsdrivendeDTO(
     val roller: List<RolleDTO>,
     val inntekt: InntektDTO? = null,
@@ -16,7 +18,7 @@ data class InntektsAarDTO(
     val aar: String,
     val pensjonsgivendeInntekt: PensjonsgivendeInntektDTO?,
     val erFerdigLignet: Boolean = pensjonsgivendeInntekt != null,
-    val datoForFastsetting: String? = null,
+    val datoForFastsetting: LocalDate? = null,
 )
 
 /**
