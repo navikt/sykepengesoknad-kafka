@@ -58,4 +58,5 @@ data class SykepengesoknadDTO(
     val fortsattArbeidssoker: Boolean? = null,
     val inntektUnderveis: Boolean? = null,
     val ignorerArbeidssokerregister: Boolean? = null,
+    val flereInntektskilderGhost: Set<KjenteInntektskilderDTO>? = null,
 )
