@@ -18,7 +18,7 @@ data class InntektsAarDTO(
     val aar: String,
     val pensjonsgivendeInntekt: PensjonsgivendeInntektDTO?,
     val erFerdigLignet: Boolean = pensjonsgivendeInntekt != null,
-    val datoForFastsetting: LocalDate? = null,
+    val pensjonsgivendeInntektPerSkatteordning: List<PensjonsgivendeInntektPerSkatteordningDTO> = emptyList(),
 )
 
 /**
@@ -30,6 +30,24 @@ data class PensjonsgivendeInntektDTO(
     val pensjonsgivendeInntektAvNaeringsinntekt: Int? = 0,
     val pensjonsgivendeInntektAvNaeringsinntektFraFiskeFangstEllerFamiliebarnehage: Int? = 0,
 )
+
+/**
+ * Pensjonsgivende inntekt for én skatteordning, uten summering.
+ */
+data class PensjonsgivendeInntektPerSkatteordningDTO(
+    val skatteordning: SkatteordningDTO,
+    val datoForFastsetting: LocalDate,
+    val pensjonsgivendeInntektAvLoennsinntekt: Int = 0,
+    val pensjonsgivendeInntektAvLoennsinntektBarePensjonsdel: Int = 0,
+    val pensjonsgivendeInntektAvNaeringsinntekt: Int = 0,
+    val pensjonsgivendeInntektAvNaeringsinntektFraFiskeFangstEllerFamiliebarnehage: Int = 0,
+)
+
+enum class SkatteordningDTO {
+    FASTLAND,
+    SVALBARD,
+    KILDESKATT_PAA_LOENN,
+}
 
 data class RolleDTO(
     val orgnummer: String,
