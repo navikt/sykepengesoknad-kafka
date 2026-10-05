@@ -3,8 +3,11 @@ package no.nav.helse.flex.sykepengesoknad.arbeidsgiverwhitelist
 import no.nav.helse.flex.sykepengesoknad.kafka.InntektDTO
 import no.nav.helse.flex.sykepengesoknad.kafka.InntektsAarDTO
 import no.nav.helse.flex.sykepengesoknad.kafka.PensjonsgivendeInntektDTO
+import no.nav.helse.flex.sykepengesoknad.kafka.PensjonsgivendeInntektPerSkatteordningDTO
+import no.nav.helse.flex.sykepengesoknad.kafka.SkatteordningDTO
 import org.amshove.kluent.`should be equal to`
 import org.junit.jupiter.api.Test
+import java.time.LocalDate
 
 class NaringsdrivendeInntektDTOTest {
     @Test
@@ -68,5 +71,56 @@ class NaringsdrivendeInntektDTOTest {
             )
 
         inntektsAar.erFerdigLignet `should be equal to` false
+    }
+
+    @Test
+    fun `InntektsAarDTO med FASTLAND og SVALBARD beholder hver skatteordning`() {
+        val inntektsAar =
+            InntektsAarDTO(
+                aar = "2024",
+                pensjonsgivendeInntekt =
+                    PensjonsgivendeInntektDTO(
+                        pensjonsgivendeInntektAvLoennsinntekt = 300000,
+                    ),
+                pensjonsgivendeInntektPerSkatteordning =
+                    listOf(
+                        PensjonsgivendeInntektPerSkatteordningDTO(
+                            skatteordning = SkatteordningDTO.FASTLAND,
+                            datoForFastsetting = LocalDate.of(2024, 5, 15),
+                            pensjonsgivendeInntektAvLoennsinntekt = 100000,
+                        ),
+                        PensjonsgivendeInntektPerSkatteordningDTO(
+                            skatteordning = SkatteordningDTO.SVALBARD,
+                            datoForFastsetting = LocalDate.of(2024, 5, 16),
+                            pensjonsgivendeInntektAvLoennsinntekt = 200000,
+                        ),
+                    ),
+            )
+
+        inntektsAar.erFerdigLignet `should be equal to` true
+        inntektsAar.pensjonsgivendeInntektPerSkatteordning.size `should be equal to` 2
+
+        inntektsAar.pensjonsgivendeInntektPerSkatteordning[0].also {
+            it.skatteordning `should be equal to` SkatteordningDTO.FASTLAND
+            it.datoForFastsetting `should be equal to` LocalDate.of(2024, 5, 15)
+            it.pensjonsgivendeInntektAvLoennsinntekt `should be equal to` 100000
+        }
+
+        inntektsAar.pensjonsgivendeInntektPerSkatteordning[1].also {
+            it.skatteordning `should be equal to` SkatteordningDTO.SVALBARD
+            it.datoForFastsetting `should be equal to` LocalDate.of(2024, 5, 16)
+            it.pensjonsgivendeInntektAvLoennsinntekt `should be equal to` 200000
+        }
+    }
+
+    @Test
+    fun `InntektsAarDTO uten pensjonsgivendeInntektPerSkatteordning har tom liste som default`() {
+        val inntektsAar =
+            InntektsAarDTO(
+                aar = "2024",
+                pensjonsgivendeInntekt = null,
+            )
+
+        inntektsAar.pensjonsgivendeInntektPerSkatteordning.isEmpty() `should be equal to` true
     }
 }
