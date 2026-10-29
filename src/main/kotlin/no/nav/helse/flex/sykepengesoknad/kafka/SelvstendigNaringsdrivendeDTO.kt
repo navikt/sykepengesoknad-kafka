@@ -6,7 +6,6 @@ data class SelvstendigNaringsdrivendeDTO(
     val roller: List<RolleDTO>,
     val inntekt: InntektDTO? = null,
     val hovedSporsmalSvar: Map<String, Boolean> = emptyMap(),
-    val brukerHarOppgittForsikring: Boolean,
 )
 
 data class InntektDTO(
