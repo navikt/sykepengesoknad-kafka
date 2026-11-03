@@ -17,7 +17,7 @@ version = findProperty("version") ?: "local-build"
 description = "sykepengesoknad-kafka"
 java.sourceCompatibility = JavaVersion.VERSION_21
 
-val kluentVersion = "1.73"
+val kotestVersion = "6.2.6"
 val junitVersion = "6.1.3"
 
 dependencies {
@@ -25,7 +25,7 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter")
     // Forhindrer bruk av Gradles innebygde launcher med annen Kotlin-versjon.
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
-    testImplementation("org.amshove.kluent:kluent:$kluentVersion")
+    testImplementation("io.kotest:kotest-assertions-core:$kotestVersion")
 }
 
 publishing {

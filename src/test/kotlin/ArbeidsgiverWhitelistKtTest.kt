@@ -1,12 +1,11 @@
 package no.nav.helse.flex.sykepengesoknad.arbeidsgiverwhitelist
 
+import io.kotest.matchers.collections.shouldHaveSize
+import io.kotest.matchers.shouldBe
 import no.nav.helse.flex.sykepengesoknad.kafka.SoknadsstatusDTO
 import no.nav.helse.flex.sykepengesoknad.kafka.SoknadstypeDTO
 import no.nav.helse.flex.sykepengesoknad.kafka.SporsmalDTO
 import no.nav.helse.flex.sykepengesoknad.kafka.SykepengesoknadDTO
-import org.amshove.kluent.`should be false`
-import org.amshove.kluent.`should be true`
-import org.amshove.kluent.shouldHaveSize
 import org.junit.jupiter.api.Test
 
 class ArbeidsgiverWhitelistKtTest {
@@ -26,7 +25,7 @@ class ArbeidsgiverWhitelistKtTest {
             "MEDLEMSKAP_OPPHOLD_UTENFOR_EOS",
             "MEDLEMSKAP_OPPHOLD_UTENFOR_NORGE",
         ).forEach { tag ->
-            sporsmal(tag).erWhitelistetForArbeidsgiver().`should be false`()
+            sporsmal(tag).erWhitelistetForArbeidsgiver() shouldBe false
         }
     }
 
@@ -73,7 +72,7 @@ class ArbeidsgiverWhitelistKtTest {
             "UTLAND",
             "OPPHOLD_UTENFOR_EOS",
         ).forEach { tag ->
-            sporsmal(tag).erWhitelistetForArbeidsgiver().`should be true`()
+            sporsmal(tag).erWhitelistetForArbeidsgiver() shouldBe true
         }
     }
 

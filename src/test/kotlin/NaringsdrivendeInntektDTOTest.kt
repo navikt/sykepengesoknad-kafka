@@ -1,11 +1,11 @@
 package no.nav.helse.flex.sykepengesoknad.arbeidsgiverwhitelist
 
+import io.kotest.matchers.shouldBe
 import no.nav.helse.flex.sykepengesoknad.kafka.InntektDTO
 import no.nav.helse.flex.sykepengesoknad.kafka.InntektsAarDTO
 import no.nav.helse.flex.sykepengesoknad.kafka.PensjonsgivendeInntektDTO
 import no.nav.helse.flex.sykepengesoknad.kafka.PensjonsgivendeInntektPerSkatteordningDTO
 import no.nav.helse.flex.sykepengesoknad.kafka.SkatteordningDTO
-import org.amshove.kluent.`should be equal to`
 import org.junit.jupiter.api.Test
 import java.time.LocalDate
 
@@ -40,25 +40,25 @@ class NaringsdrivendeInntektDTOTest {
                     ),
             )
 
-        naringsdrivendeInntekt.norskPersonidentifikator `should be equal to` "11111111111"
-        naringsdrivendeInntekt.inntektsAar.size `should be equal to` 2
+        naringsdrivendeInntekt.norskPersonidentifikator shouldBe "11111111111"
+        naringsdrivendeInntekt.inntektsAar.size shouldBe 2
 
         naringsdrivendeInntekt.inntektsAar.first().also {
-            it.aar `should be equal to` "2024"
-            it.erFerdigLignet `should be equal to` true
-            it.pensjonsgivendeInntekt!!.pensjonsgivendeInntektAvLoennsinntekt `should be equal to` 100000
-            it.pensjonsgivendeInntekt.pensjonsgivendeInntektAvLoennsinntektBarePensjonsdel `should be equal to` 50000
-            it.pensjonsgivendeInntekt.pensjonsgivendeInntektAvNaeringsinntekt `should be equal to` 300000
-            it.pensjonsgivendeInntekt.pensjonsgivendeInntektAvNaeringsinntektFraFiskeFangstEllerFamiliebarnehage `should be equal to` 12000
+            it.aar shouldBe "2024"
+            it.erFerdigLignet shouldBe true
+            it.pensjonsgivendeInntekt!!.pensjonsgivendeInntektAvLoennsinntekt shouldBe 100000
+            it.pensjonsgivendeInntekt.pensjonsgivendeInntektAvLoennsinntektBarePensjonsdel shouldBe 50000
+            it.pensjonsgivendeInntekt.pensjonsgivendeInntektAvNaeringsinntekt shouldBe 300000
+            it.pensjonsgivendeInntekt.pensjonsgivendeInntektAvNaeringsinntektFraFiskeFangstEllerFamiliebarnehage shouldBe 12000
         }
 
         naringsdrivendeInntekt.inntektsAar.last().also {
-            it.aar `should be equal to` "2025"
-            it.erFerdigLignet `should be equal to` true
-            it.pensjonsgivendeInntekt!!.pensjonsgivendeInntektAvLoennsinntekt `should be equal to` 800000
-            it.pensjonsgivendeInntekt.pensjonsgivendeInntektAvLoennsinntektBarePensjonsdel `should be equal to` 60000
-            it.pensjonsgivendeInntekt.pensjonsgivendeInntektAvNaeringsinntekt `should be equal to` 400000
-            it.pensjonsgivendeInntekt.pensjonsgivendeInntektAvNaeringsinntektFraFiskeFangstEllerFamiliebarnehage `should be equal to` 9000
+            it.aar shouldBe "2025"
+            it.erFerdigLignet shouldBe true
+            it.pensjonsgivendeInntekt!!.pensjonsgivendeInntektAvLoennsinntekt shouldBe 800000
+            it.pensjonsgivendeInntekt.pensjonsgivendeInntektAvLoennsinntektBarePensjonsdel shouldBe 60000
+            it.pensjonsgivendeInntekt.pensjonsgivendeInntektAvNaeringsinntekt shouldBe 400000
+            it.pensjonsgivendeInntekt.pensjonsgivendeInntektAvNaeringsinntektFraFiskeFangstEllerFamiliebarnehage shouldBe 9000
         }
     }
 
@@ -70,7 +70,7 @@ class NaringsdrivendeInntektDTOTest {
                 pensjonsgivendeInntekt = null,
             )
 
-        inntektsAar.erFerdigLignet `should be equal to` false
+        inntektsAar.erFerdigLignet shouldBe false
     }
 
     @Test
@@ -97,19 +97,19 @@ class NaringsdrivendeInntektDTOTest {
                     ),
             )
 
-        inntektsAar.erFerdigLignet `should be equal to` true
-        inntektsAar.pensjonsgivendeInntektPerSkatteordning.size `should be equal to` 2
+        inntektsAar.erFerdigLignet shouldBe true
+        inntektsAar.pensjonsgivendeInntektPerSkatteordning.size shouldBe 2
 
         inntektsAar.pensjonsgivendeInntektPerSkatteordning[0].also {
-            it.skatteordning `should be equal to` SkatteordningDTO.FASTLAND
-            it.datoForFastsetting `should be equal to` LocalDate.of(2024, 5, 15)
-            it.pensjonsgivendeInntektAvLoennsinntekt `should be equal to` 100000
+            it.skatteordning shouldBe SkatteordningDTO.FASTLAND
+            it.datoForFastsetting shouldBe LocalDate.of(2024, 5, 15)
+            it.pensjonsgivendeInntektAvLoennsinntekt shouldBe 100000
         }
 
         inntektsAar.pensjonsgivendeInntektPerSkatteordning[1].also {
-            it.skatteordning `should be equal to` SkatteordningDTO.SVALBARD
-            it.datoForFastsetting `should be equal to` LocalDate.of(2024, 5, 16)
-            it.pensjonsgivendeInntektAvLoennsinntekt `should be equal to` 200000
+            it.skatteordning shouldBe SkatteordningDTO.SVALBARD
+            it.datoForFastsetting shouldBe LocalDate.of(2024, 5, 16)
+            it.pensjonsgivendeInntektAvLoennsinntekt shouldBe 200000
         }
     }
 
@@ -121,6 +121,6 @@ class NaringsdrivendeInntektDTOTest {
                 pensjonsgivendeInntekt = null,
             )
 
-        inntektsAar.pensjonsgivendeInntektPerSkatteordning.isEmpty() `should be equal to` true
+        inntektsAar.pensjonsgivendeInntektPerSkatteordning.isEmpty() shouldBe true
     }
 }
