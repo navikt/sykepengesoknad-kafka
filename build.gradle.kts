@@ -17,7 +17,7 @@ version = findProperty("version") ?: "local-build"
 description = "sykepengesoknad-kafka"
 java.sourceCompatibility = JavaVersion.VERSION_21
 
-val kotestVersion = "6.2.6"
+val kotestVersion = "6.2.7"
 val junitVersion = "6.1.3"
 
 dependencies {
